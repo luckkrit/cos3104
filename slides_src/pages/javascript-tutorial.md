@@ -1812,3 +1812,7 @@ s = text.split("")
 console.log(s)
 
 ```  
+
+---
+
+# Search string
