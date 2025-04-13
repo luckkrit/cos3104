@@ -741,13 +741,16 @@ const person = new Object();
 
 // objectName.property
 let age = person.age;
+console.log(age)
 
 //objectName["property"]
 let age2 = person["age"];
+console.log(age2)
 
 //objectName[expression]
 const x = 'age';
 let age3 = person[x];
+console.log(age3)
 
 ```
 
