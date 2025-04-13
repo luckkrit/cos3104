@@ -1,5 +1,6 @@
 ---
 layout: cover
+transition: fade
 ---
 
 # Javascript Tutorial
@@ -10,97 +11,182 @@ layout: cover
 
 - ตัวโค๊ดของ JavaScript จะอยู่ใน tag ที่ชื่อว่า `script` จะอยู่ใน ส่วนของ `head`  หรือ `body` ของ `html` ก็ได้
 
-```html
-<!DOCTYPE html>
-<html>
+<Sandpack
+theme="light" 
+template="vite" 
+:files="{
+        '/index.js': ``,
+        '/index.html': {code:`<!DOCTYPE html>
+<html lang='en'>
 <head>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<meta name='description' content='' />
+	<meta name='author' content='' />
+	<meta name='viewport' content='user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width' />
+	<title></title>
 <script>
 function myFunction() {
-  document.getElementById("demo").innerHTML = "Paragraph changed.";
+  document.getElementById('demo').innerHTML = 'Paragraph changed.';
 }
 </script>
-</head>
+	</head>
 <body>
-
-<h2>Demo JavaScript in Head</h2>
-
-<p id="demo">A Paragraph</p>
-<button type="button" onclick="myFunction()">Try it</button>
+    <p id='demo'>A paragraph</p>
+		<button onClick='myFunction()'>
+		click on me		
+    </button>
 </body>
 </html>
-```
+`, readOnly:true}}"
+:options="{
+    showTabs: false,
+    visibleFiles: ['/index.html'],
+    activeFile: '/index.html',
+    showConsole: true,
+     editorHeight: 400,
+        editorWidthPercentage: 40,
+      }"
+      :custom-setup="{
+        dependencies: {
+          'jquery': 'latest',
+        },
+      }"
+/>
 
 ---
 
 - ส่วน body
-```html
-<!DOCTYPE html>
-<html>
+
+<Sandpack
+theme="light" 
+template="vite" 
+:files="{
+        '/index.js': ``,
+        '/index.html': {code:`<!DOCTYPE html>
+<html lang='en'>
 <head>
-</head>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<meta name='description' content='' />
+	<meta name='author' content='' />
+	<meta name='viewport' content='user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width' />
+	<title></title>
+	</head>
 <body>
-
-<h2>Demo JavaScript in Head</h2>
-
-<p id="demo2">A Paragraph</p>
-<button type="button" onclick="myFunction2()">Try it</button>
+    <p id='demo'>A paragraph</p>
+		<button onClick='myFunction()'>
+		click on me		
+</button>
 <script>
-function myFunction2() {
-  document.getElementById("demo2").innerHTML = "Paragraph changed.";
+function myFunction() {
+  document.getElementById('demo').innerHTML = 'Paragraph changed.';
 }
 </script>
 </body>
 </html>
-
-```
+`, readOnly:true}}"
+:options="{
+    showTabs: false,
+    visibleFiles: ['/index.html'],
+    activeFile: '/index.html',
+    showConsole: true,
+     editorHeight: 400,
+        editorWidthPercentage: 40,
+      }"
+      :custom-setup="{
+        dependencies: {
+          'jquery': 'latest',
+        },
+      }"
+/>
 ---
 
 - การอ้างอิงไฟล์ JavaScript ที่ชื่อว่า `myScript.js` อันนี้จะไม่มี path แสดงว่าจะค้นหาจากในโฟลเดอร์เดียวกัน
 
-```html
-<!DOCTYPE html>
-<html>
+<Sandpack
+theme="light" 
+template="vite" 
+:files="{'/myScript.js': {code:`function myFunction() {
+  document.getElementById('demo').innerHTML = 'Paragraph changed.';
+}`,readOnly:true},
+'/index.html': {code:`<!DOCTYPE html>
+<html lang='en'>
 <head>
-<script src="myScript.js"></script>
-</head>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<meta name='description' content='' />
+	<meta name='author' content='' />
+	<meta name='viewport' content='user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width' />
+	<title></title>
+<script src='myScript.js'></script>
+	</head>
 <body>
-<h2>Demo JavaScript in Head</h2>
-<p id="demo">A Paragraph</p>
-<button type="button" onclick="myFunction()">Try it</button>
+    <p id='demo'>A paragraph</p>
+		<button onClick='myFunction()'>
+		click on me		
+    </button>
 </body>
 </html>
-```
-
-- `myScript.js`
-
-```js
-function myFunction() {
-  document.getElementById("demo").innerHTML = "Paragraph changed.";
-}
-```
+`, readOnly:true}}"
+:options="{
+    showTabs: true,
+    visibleFiles: ['/index.html', '/myScript.js'],
+    activeFile: '/index.html',
+    showConsole: true,
+     editorHeight: 400,
+        editorWidthPercentage: 40,
+      }"
+      :custom-setup="{
+        dependencies: {
+          'jquery': 'latest',
+        },
+      }"
+/>
 
 ---
 
 - การอ้างอิงไฟล์ผ่าน URL
 
-```html
-<!DOCTYPE html>
-<html>
+
+<Sandpack
+theme="light" 
+template="vite" 
+:files="{
+        '/index.js': ``,
+        '/index.html': {code:`<!DOCTYPE html>
+<html lang='en'>
 <head>
-<script src="https://www.w3schools.com/js/myScript.js"></script>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<meta name='description' content='' />
+	<meta name='author' content='' />
+	<meta name='viewport' content='user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width' />
+  <script src='https://www.w3schools.com/js/myScript.js'></script>
+	<title></title>
 </head>
 <body>
-<h2>Demo JavaScript in Head</h2>
-<p id="demo">A Paragraph</p>
-<button type="button" onclick="myFunction()">Try it</button>
+    <p id='demo'>A paragraph</p>
+		<button onClick='myFunction()'>Try it</button>
 </body>
 </html>
-```
+`, readOnly:true}}"
+:options="{
+    showTabs: false,
+    visibleFiles: ['/index.html'],
+    activeFile: '/index.html',
+    showConsole: true,
+     editorHeight: 400,
+        editorWidthPercentage: 40,
+      }"
+      :custom-setup="{
+        dependencies: {
+          'jquery': 'latest',
+        },
+      }"
+/>
 
 ---
 
 - การอ้างอิงไฟล์แบบ path
 
+<!-- 
 ```html
 <!DOCTYPE html>
 <html>
@@ -114,6 +200,47 @@ function myFunction() {
 </body>
 </html>
 ```
+-->
+
+<Sandpack
+theme="light" 
+template="vite" 
+:files="{'/js/myScript.js': {code:`function myFunction() {
+  document.getElementById('demo').innerHTML = 'Paragraph changed.';
+}`,readOnly:true},
+'/index.html': {code:`<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<meta name='description' content='' />
+	<meta name='author' content='' />
+	<meta name='viewport' content='user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width' />
+	<title></title>
+<script src='/js/myScript.js'></script>
+	</head>
+<body>
+    <p id='demo'>A paragraph</p>
+		<button onClick='myFunction()'>
+		click on me		
+    </button>
+</body>
+</html>
+`, readOnly:true}}"
+:options="{
+    showTabs: true,
+    visibleFiles: ['/index.html', '/js/myScript.js'],
+    activeFile: '/index.html',
+    showConsole: true,
+     editorHeight: 400,
+        editorWidthPercentage: 40,
+      }"
+      :custom-setup="{
+        dependencies: {
+          'jquery': 'latest',
+        },
+      }"
+/>
+
 
 ---
 layout: section
@@ -126,118 +253,246 @@ layout: section
 - แสดงผลลัพธ์ไปยัง `HTML Element` โดยใช้ `innerHTML` หรือ `innerText`
 - `innerHTML` จะแสดงผลลัพธ์เป็น `HTML Element` อีกที ดังนั้น `h2` จึงเรียกว่า `child` ส่วน `p` เป็น `parent`
 
-```html
-<!DOCTYPE html>
-<html>
+
+<Sandpack
+theme="light" 
+template="vite" 
+:files="{
+        '/index.js': ``,
+        '/index.html': {code:`<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<meta name='description' content='' />
+	<meta name='author' content='' />
+	<meta name='viewport' content='user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width' />
+	<title></title>
+	</head>
 <body>
-
-<h1>My First Web Page</h1>
-<p>My First Paragraph</p>
-
-<p id="demo"></p>
-
+    <p id='demo'>A paragraph</p>
 <script>
-document.getElementById("demo").innerHTML = "<h2>Hello World</h2>";
+  document.getElementById('demo').innerHTML = 'Paragraph changed.';
 </script>
-
 </body>
 </html>
-```
-
+`, readOnly:true}}"
+:options="{
+    showTabs: false,
+    visibleFiles: ['/index.html'],
+    activeFile: '/index.html',
+    showConsole: true,
+     editorHeight: 400,
+        editorWidthPercentage: 40,
+      }"
+      :custom-setup="{
+        dependencies: {
+          'jquery': 'latest',
+        },
+      }"
+/>
 
 ---
 
 - `innerText` จะแสดงผลลัพธ์เป็น `text`
 
-```html
-<!DOCTYPE html>
-<html>
+<Sandpack
+theme="light" 
+template="vite" 
+:files="{
+        '/index.js': ``,
+        '/index.html': {code:`<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<meta name='description' content='' />
+	<meta name='author' content='' />
+	<meta name='viewport' content='user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width' />
+	<title></title>
+	</head>
 <body>
-
-<h1>My First Web Page</h1>
-<p>My First Paragraph</p>
-
-<p id="demo"></p>
-
+    <p id='demo'>A paragraph</p>
 <script>
-document.getElementById("demo").innerText = "Hello World";
+  document.getElementById('demo').innerText = 'Paragraph changed.';
 </script>
-
 </body>
 </html>
-```
+`, readOnly:true}}"
+:options="{
+    showTabs: false,
+    visibleFiles: ['/index.html'],
+    activeFile: '/index.html',
+    showConsole: true,
+     editorHeight: 400,
+        editorWidthPercentage: 40,
+      }"
+      :custom-setup="{
+        dependencies: {
+          'jquery': 'latest',
+        },
+      }"
+/>
 
 ---
 
 - ใช้ `document.write()`
 
-```html
-<!DOCTYPE html>
-<html>
+<Sandpack
+theme="light" 
+template="vite" 
+:files="{
+        '/index.js': ``,
+        '/index.html': {code:`<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<meta name='description' content='' />
+	<meta name='author' content='' />
+	<meta name='viewport' content='user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width' />
+	<title></title>
+	</head>
 <body>
-
-<h1>My First Web Page</h1>
-<p>My first paragraph.</p>
-
+    <p id='demo'>A paragraph</p>
 <script>
-document.write(5 + 6);
+  document.write(5+6);
 </script>
-
 </body>
 </html>
-```
+`, readOnly:true}}"
+:options="{
+    showTabs: false,
+    visibleFiles: ['/index.html'],
+    activeFile: '/index.html',
+    showConsole: true,
+     editorHeight: 400,
+        editorWidthPercentage: 40,
+      }"
+      :custom-setup="{
+        dependencies: {
+          'jquery': 'latest',
+        },
+      }"
+/>
 
 ---
 
 - ใช้ `window.alert()` หรือ `alert()`
 
-```html
-<!DOCTYPE html>
-<html>
+<Sandpack
+theme="light" 
+template="vite" 
+:files="{
+        '/index.js': ``,
+        '/index.html': {code:`<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<meta name='description' content='' />
+	<meta name='author' content='' />
+	<meta name='viewport' content='user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width' />
+	<title></title>
+	</head>
 <body>
-
-<h1>My First Web Page</h1>
-<p>My first paragraph.</p>
-
+    <p id='demo'>A paragraph</p>
 <script>
-window.alert(5 + 6);
+  window.alert(5+6);
 </script>
-
 </body>
 </html>
-```
+`, readOnly:true}}"
+:options="{
+    showTabs: false,
+    visibleFiles: ['/index.html'],
+    activeFile: '/index.html',
+    showConsole: true,
+     editorHeight: 400,
+        editorWidthPercentage: 40,
+      }"
+      :custom-setup="{
+        dependencies: {
+          'jquery': 'latest',
+        },
+      }"
+/>
 
 ---
 
-- ใช้ `console.log()`
+- ใช้ `console.log()` กด <kbd>F12</kbd>
 
-```html
-<!DOCTYPE html>
-<html>
+<Sandpack
+theme="light" 
+template="vite" 
+:files="{
+        '/index.js': ``,
+        '/index.html': {code:`<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<meta name='description' content='' />
+	<meta name='author' content='' />
+	<meta name='viewport' content='user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width' />
+	<title></title>
+	</head>
 <body>
-
+    <p id='demo'>A paragraph</p>
 <script>
-console.log(5 + 6);
+console.log('5 + 6 = ',5+6)
 </script>
-
 </body>
 </html>
-```
+`, readOnly:true}}"
+:options="{
+    showTabs: false,
+    visibleFiles: ['/index.html'],
+    activeFile: '/index.html',
+    showConsole: true,
+     editorHeight: 400,
+        editorWidthPercentage: 40,
+      }"
+      :custom-setup="{
+        dependencies: {
+          'jquery': 'latest',
+        },
+      }"
+/>
 
 ---
 
 - การ `print` เพื่อพิมพ์ผ่านเครื่อง `Printer` หรือบันทึกเป็น `pdf`
 
-```html
-<!DOCTYPE html>
-<html>
+<Sandpack
+theme="light" 
+template="vite" 
+:files="{
+        '/index.js': ``,
+        '/index.html': {code:`<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<meta name='description' content='' />
+	<meta name='author' content='' />
+	<meta name='viewport' content='user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width' />
+	<title></title>
+	</head>
 <body>
-
-<button onclick="window.print()">Print this page</button>
-
+    <p id='demo'>A paragraph</p>
+    <button onclick='window.print()'>Print</button>
 </body>
 </html>
-```
+`, readOnly:true}}"
+:options="{
+    showTabs: false,
+    visibleFiles: ['/index.html'],
+    activeFile: '/index.html',
+    showConsole: true,
+     editorHeight: 400,
+        editorWidthPercentage: 40,
+      }"
+      :custom-setup="{
+        dependencies: {
+          'jquery': 'latest',
+        },
+      }"
+/>
 
 ---
 layout: section
