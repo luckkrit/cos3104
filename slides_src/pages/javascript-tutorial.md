@@ -738,6 +738,7 @@ console.log(person)
 
 ```js {monaco-run}
 const person = new Object();
+person.age = 30
 
 // objectName.property
 let age = person.age;
