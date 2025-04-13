@@ -579,6 +579,7 @@ var x = 2;
 }
 
 // Here x is 2
+console.log(x)
 ```
 
 ---
@@ -596,6 +597,7 @@ let x = 2;
 }
 
 // Here x is 10
+console.log(x)
 ```
 
 ---
@@ -618,6 +620,7 @@ let x = 2;
 ```js {monaco-run}
 carName = "Volvo";
 var carName;
+console.log(carName)
 ```
 
 ---
@@ -889,6 +892,8 @@ console.log(person.name())
 
 # การ display object
 
+- ปกติจะขึ้น [object Object]
+
 <Sandpack
 theme="light" 
 template="vanilla" 
@@ -897,6 +902,53 @@ template="vanilla"
   name: 'John',
   age: 30,
   city: 'New York'
+};
+document.getElementById('app')
+.innerHTML = person;
+`,
+        '/index.html': `
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<meta name='description' content='' />
+	<meta name='author' content='' />
+	<meta name='viewport' content='user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width' />
+	<title></title>
+	</head>
+<body>
+<div id='app'>
+</div>
+</body>
+</html>`
+      }"
+:options="{
+    showConsole: true,
+     editorHeight: 430,
+        editorWidthPercentage: 40,
+      }"
+      :custom-setup="{
+        dependencies: {
+          'jquery': 'latest',
+        }
+      }"
+/>
+
+---
+
+- แต่พอ override toString()
+
+<Sandpack
+theme="light" 
+template="vanilla" 
+:files="{
+        '/index.js': `const person = {
+  name: 'John',
+  age: 30,
+  city: 'New York',
+  toString: function(){ 
+    return this.name + ' ' +this.age + ' '+ this.city
+  }
 };
 document.getElementById('app')
 .innerHTML = person;
@@ -1275,6 +1327,9 @@ template="vanilla"
   this.lastName = last;
   this.age = age;
   this.eyeColor = eye;
+  this.toString = function(){
+    return this.firstName + ' ' + this.lastName + ' ' + this.age + ' '+ this.eyeColor
+  }
 }
 const myFather = new Person('John', 'Doe', 50, 'blue');
 const myMother = new Person('Sally', 'Rally', 48, 'green');
@@ -1284,6 +1339,10 @@ console.log(myFather)
 console.log(myMother)
 console.log(mySister)
 console.log(mySelf)
+document.getElementById('app').innerHTML += myFather + '<br/>'
+document.getElementById('app').innerHTML += myMother + '<br/>'
+document.getElementById('app').innerHTML += mySister + '<br/>'
+document.getElementById('app').innerHTML += mySelf + '<br/>'
 `,
         '/index.html': `
 <!DOCTYPE html>
@@ -1328,6 +1387,9 @@ template="vanilla"
   this.age = age;
   this.eyeColor = eye;
   this.nationality = 'English';
+  this.toString = function(){
+    return this.firstName + ' ' + this.lastName + ' ' + this.age + ' '+ this.eyeColor + ' ' + this.nationality
+  }
 }
 const myFather = new Person('John', 'Doe', 50, 'blue');
 const myMother = new Person('Sally', 'Rally', 48, 'green');
@@ -1337,6 +1399,10 @@ console.log(myFather)
 console.log(myMother)
 console.log(mySister)
 console.log(mySelf)
+document.getElementById('app').innerHTML += myFather + '<br/>'
+document.getElementById('app').innerHTML += myMother + '<br/>'
+document.getElementById('app').innerHTML += mySister + '<br/>'
+document.getElementById('app').innerHTML += mySelf + '<br/>'
 `,
         '/index.html': `
 <!DOCTYPE html>
@@ -1380,6 +1446,9 @@ template="vanilla"
   this.age = age;
   this.eyeColor = eye;
   this.nationality = 'English';
+  this.toString = function(){
+    return this.firstName + ' ' + this.lastName + ' ' + this.age + ' '+ this.eyeColor + ' ' + this.nationality + ' ' + this.car
+  }
 }
 const myFather = new Person('John', 'Doe', 50, 'blue');
 const myMother = new Person('Sally', 'Rally', 48, 'green');
@@ -1391,6 +1460,10 @@ console.log(myFather)
 console.log(myMother)
 console.log(mySister)
 console.log(mySelf)
+document.getElementById('app').innerHTML += myFather.toString() + '<br/>'
+document.getElementById('app').innerHTML += myMother.toString() + '<br/>'
+document.getElementById('app').innerHTML += mySister.toString() + '<br/>'
+document.getElementById('app').innerHTML += mySelf.toString() + '<br/>'
 `,
         '/index.html': `
 <!DOCTYPE html>
@@ -1436,6 +1509,9 @@ template="vanilla"
   this.age = age;
   this.eyeColor = eye;
   this.nationality = 'English';
+  this.toString = function(){
+    return this.firstName + ' ' + this.lastName + ' ' + this.age + ' '+ this.eyeColor + ' ' + this.nationality + ' ' + this.car
+  }
 }
 const myFather = new Person('John', 'Doe', 50, 'blue');
 const myMother = new Person('Sally', 'Rally', 48, 'green');
@@ -1447,6 +1523,10 @@ console.log(myFather)
 console.log(myMother)
 console.log(mySister)
 console.log(mySelf)
+document.getElementById('app').innerHTML += myFather.toString() + '<br/>'
+document.getElementById('app').innerHTML += myMother.toString() + '<br/>'
+document.getElementById('app').innerHTML += mySister.toString() + '<br/>'
+document.getElementById('app').innerHTML += mySelf.toString() + '<br/>'
 `,
         '/index.html': `
 <!DOCTYPE html>
@@ -1483,13 +1563,77 @@ console.log(mySelf)
 
 - ขึ้นต้นด้วย on เช่น onclick, ondbclick
 
-<Ex1/>
+<Sandpack
+theme="light" 
+template="vanilla" 
+:files="{
+        '/index.js': ``,
+        '/index.html': `<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<meta name='description' content='' />
+	<meta name='author' content='' />
+	<meta name='viewport' content='user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width' />
+	<title></title>
+</head>
+<body>
+<div id=\'app\'></div>
+<button onclick=\'document.getElementById(\`app\`).innerHTML = Date()\'>The time is?</button>
+</body>
+</html>`
+      }"
+:options="{
+    showTabs: false,
+    showConsole: true,
+    activeFile: '/index.html',
+     editorHeight: 400,
+        editorWidthPercentage: 40,
+      }"
+      :custom-setup="{
+        dependencies: {
+          'jquery': 'latest',
+        }
+      }"
+/>
 
 ---
 
 - ใช้ this ที่หมายถึงตัวมันเอง
 
-<Ex2 />
+<Sandpack
+theme="light" 
+template="vanilla" 
+:files="{
+        '/index.js': ``,
+        '/index.html': `<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<meta name='description' content='' />
+	<meta name='author' content='' />
+	<meta name='viewport' content='user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width' />
+	<title></title>
+</head>
+<body>
+<button onclick=\'this.innerHTML = Date()\'>The time is?</button>
+<div id=\'app\'>
+</div>
+</body>
+</html>`}"
+:options="{
+    showTabs: false,
+    activeFile: '/index.html',
+    showConsole: true,
+     editorHeight: 400,
+        editorWidthPercentage: 40,
+      }"
+      :custom-setup="{
+        dependencies: {
+          'jquery': 'latest',
+        }
+      }"
+/>
 
 
 ---
@@ -2071,3 +2215,409 @@ console.log(s)
 ---
 
 # Search string
+
+- The indexOf() method returns the **index** (position) of the **first** occurrence of a string in a string, or it returns -1 if the string is not found:
+
+```js {monaco-run}
+let text = "Please locate where 'locate' occurs!";
+let index = text.indexOf("locate");
+
+console.log(index)
+```
+---
+
+- The lastIndexOf() method returns the **index** of the **last** occurrence of a specified text in a string:
+
+```js {monaco-run}
+let text = "Please locate where 'locate' occurs!";
+let index = text.lastIndexOf("locate");
+
+console.log(index)
+```
+
+---
+
+- Both indexOf(), and lastIndexOf() return -1 if the text is not found:
+
+```js {monaco-run}
+let text = "Please locate where 'locate' occurs!";
+let index = text.lastIndexOf("John");
+
+console.log(index)
+```
+
+---
+
+- Both methods accept a second parameter as the starting position for the search:
+
+```js {monaco-run}
+let text = "Please locate where 'locate' occurs!";
+let index = text.indexOf("locate", 15);
+
+console.log(index)
+```
+
+- The lastIndexOf() methods searches backwards (from the end to the beginning), meaning: if the second parameter is 15, the search starts at position 15, and searches to the beginning of the string.
+
+```js {monaco-run}
+let text = "Please locate where 'locate' occurs!";
+let index = text.lastIndexOf("locate", 15);
+
+console.log(index)
+```
+
+---
+
+- The search() method searches a string for a string (or a regular expression) and returns the position of the match:
+
+```js {monaco-run}
+let text = "Please locate where 'locate' occurs!";
+let index = text.search("locate");
+
+console.log(index)
+
+index = text.search(/locate/);
+console.log(index)
+```
+
+- The difference between search and indexOf:
+  - The search() method cannot take a second start position argument.
+  - The indexOf() method cannot take powerful search values (regular expressions).
+
+---
+
+# Template string
+
+- ใช้ `` แทน ""
+- ใช้ string ได้หลายบรรทัด
+- ใช้ interpolation ตัวแปร กับ expression ได้
+
+```js {monaco-run}
+let firstName = "John";
+let lastName = "Doe";
+
+let text = `Welcome ${firstName}, ${lastName}!`;
+console.log(text)
+
+let price = 10;
+let VAT = 0.25;
+
+let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
+console.log(total)
+```
+
+---
+
+<Sandpack
+theme="light" 
+template="vite" 
+:files="{
+        '/index.js': ``,
+        '/index.html': {code:`<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<meta name='description' content='' />
+	<meta name='author' content='' />
+	<meta name='viewport' content='user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width' />
+	<title></title>
+	</head>
+<body>
+    <p id='demo'>A paragraph</p>
+<script>
+let header = 'Template Strings';
+let tags = ['template strings', 'javascript', 'es6'];
+let html = \`<h2>\${header}</h2><ul>\`;
+for (const x of tags) {
+  html += \`<li>\${x}</li>\`;
+}
+html += \`</ul>\`;
+document.getElementById('demo').innerHTML = html
+</script>
+</body>
+</html>
+`, readOnly:true}}"
+:options="{
+    showTabs: false,
+    visibleFiles: ['/index.html'],
+    activeFile: '/index.html',
+    showConsole: true,
+     editorHeight: 400,
+        editorWidthPercentage: 40,
+      }"
+      :custom-setup="{
+        dependencies: {
+          'jquery': 'latest',
+        },
+      }"
+/>
+
+---
+
+# Number
+
+```js {monaco-run}
+let x = 10;
+let y = 20;
+let z = "The result is: " + x + y;
+
+console.log(z)
+
+```
+
+---
+
+# Numeric String
+
+```js
+let x = 100;         // x is a number
+
+let y = "100";       // y is a string
+```
+
+---
+
+
+```js {monaco-run} {autorun:false}
+let x = "100";
+let y = "10";
+let z = x / y;
+
+
+console.log(z)
+
+```
+
+<v-click>
+- JavaScript will try to convert strings to numbers in all numeric operations:
+</v-click>
+
+---
+
+
+```js {monaco-run} {autorun:false}
+let x = "100";
+let y = "10";
+let z = x * y;
+
+
+console.log(z)
+
+```
+
+---
+
+- Guess?
+
+```js {monaco-run} {autorun:false}
+let x = "100";
+let y = "10";
+let z = x - y;
+
+
+console.log(z)
+
+```
+
+---
+
+- Guess?
+
+```js {monaco-run} {autorun:false}
+let x = "100";
+let y = "10";
+let z = x + y;
+
+
+console.log(z)
+
+```
+
+---
+
+# NaN - Not a Number
+
+- Trying to do arithmetic with a non-numeric string will result in **NaN** (Not a Number):
+
+```js {monaco-run}
+let x = 100 / "Apple";
+console.log(x)
+```
+
+
+---
+
+```js {monaco-run} {autorun:false}
+let x = 100 / "10";
+
+console.log(x)
+
+```
+
+---
+
+- You can use the global JavaScript function isNaN() to find out if a value is a not a number:
+
+```js {monaco-run}
+let x = 100 / "Apple";
+let result = isNaN(x);
+
+
+console.log(result)
+```
+
+---
+
+- Watch out for **NaN**. If you use **NaN** in a mathematical operation, the result will also be **NaN**:
+
+```js {monaco-run}
+let x = NaN;
+let y = 5;
+let z = x + y;
+
+console.log(z)
+```
+
+- The result will be **NaN5**
+
+```js {monaco-run}
+let x = NaN;
+let y = "5";
+let z = x + y;
+console.log(z)
+```
+
+- **NaN** is a number: typeof **NaN** returns **number**:
+
+```js {monaco-run}
+let t = typeof NaN;
+console.log(t)
+```
+
+---
+
+# Infinity
+
+- Infinity (or -Infinity) is the value JavaScript will return if you calculate a number outside the largest possible number.
+
+```js {monaco-run} {autorun:false}
+let myNumber = 2;
+// Execute until Infinity
+while (myNumber != Infinity) {
+  myNumber = myNumber * myNumber;
+}
+console.log(myNumber)
+```
+
+- Division by 0 (zero) also generates Infinity:
+
+```js {monaco-run}
+let x =  2 / 0;
+let y = -2 / 0;
+
+console.log(x)
+console.log(y)
+```
+
+---
+
+- **Infinity** is a **number**: typeof **Infinity** returns **number**
+
+```js {monaco-run}
+let t = typeof Infinity;
+console.log(t)
+```
+
+---
+
+# Hexadecimal
+
+- JavaScript interprets numeric constants as hexadecimal if they are preceded by 0x.
+
+```js {monaco-run}
+let x = 0xFF;
+console.log(x)
+
+// Never write a number with a leading zero (like 07).
+let y = 07; //octal literals are not allowed
+y = 0o7; // octal
+console.log(y)
+
+```
+
+---
+
+- By default, JavaScript displays numbers as base 10 decimals.
+
+```js {monaco-run}
+let myNumber = 32;
+const base32 = myNumber.toString(32);
+const base16 = myNumber.toString(16);
+const base12 = myNumber.toString(12);
+const base10 = myNumber.toString(10);
+const base8 = myNumber.toString(8);
+const base2 = myNumber.toString(2);
+
+console.log(base32)
+console.log(base16)
+console.log(base12)
+console.log(base10)
+console.log(base8)
+console.log(base2)
+```
+
+---
+
+- toFixed() ใช้กับพวกเงิน
+
+```js {monaco-run}
+let x = 9.656;
+const x1 = x.toFixed(0);
+const x2 = x.toFixed(2);
+const x3 = x.toFixed(4);
+const x4 = x.toFixed(6);
+
+console.log(x1)
+console.log(x2)
+console.log(x3)
+console.log(x4)
+
+```
+
+---
+
+- parseInt() แปลง numeric string to number
+
+```js {monaco-run}
+let result = parseInt("-10");
+console.log(result)
+result = parseInt("-10.33");
+console.log(result)
+result = parseInt("10");
+console.log(result)
+result = parseInt("10.33");
+console.log(result)
+result = parseInt("10 20 30");
+console.log(result)
+result = parseInt("10 years");
+console.log(result)
+result = parseInt("years 10");
+console.log(result)
+```
+
+---
+
+- parseFloat() แปลง float string to float
+
+```js {monaco-run}
+let result = parseFloat("10");
+console.log(result)
+result = parseFloat("10.33");
+console.log(result)
+result = parseFloat("10 20 30");
+console.log(result)
+result = parseFloat("10 years");
+console.log(result)
+result = parseFloat("years 10");
+console.log(result)
+```

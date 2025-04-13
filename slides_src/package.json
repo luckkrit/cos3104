@@ -11,7 +11,8 @@
     "build_chapter4": "slidev build --base /cos3105/slides/chapter4/ --out ../public/slides/chapter4",
     "build_chapter5": "slidev build --base /cos3105/slides/chapter5/ --out ../public/slides/chapter5",
     "build_chapter6": "slidev build --base /cos3105/slides/chapter6/ --out ../public/slides/chapter6",
-    "build_js_tutorial": "slidev build --base /cos3104/slides/js_tutorial/ --out ../public/slides/js_tutorial"
+    "build_js_tutorial": "slidev build --base /cos3104/slides/js_tutorial/ --out ../public/slides/js_tutorial",
+    "build_js_tutorial2": "slidev build --base /cos3104/slides/js_tutorial2/ --out ../public/slides/js_tutorial2"
   },
   "dependencies": {
     "@slidev/cli": "^51.0.1",
