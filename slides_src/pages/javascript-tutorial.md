@@ -1642,7 +1642,7 @@ template="vanilla"
 
 ---
 
-- ใช้ function
+- ใช้ function ที่อยู่คนละไฟล์
 
 <Sandpack
 theme="light" 
@@ -1663,7 +1663,7 @@ template="vite"
 	</head>
 <body>
 		<button onClick='displayDate(this)'>
-		click on me		
+		click on me	</button>
     <script src='/index.js'></script>
 </body>
 </html>`}"
@@ -1679,32 +1679,47 @@ template="vite"
       }"
 />
 
-<!--
+---
 
-```html
-<!DOCTYPE html>
-<html>
+- ใช้ function ที่อยู่ไฟล์เดียวกัน
+
+<Sandpack
+theme="light" 
+template="vite" 
+:files="{
+        '/index.js': ``,
+        '/index.html': `<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<meta name='description' content='' />
+	<meta name='author' content='' />
+	<meta name='viewport' content='user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width' />
+	<title></title>
+	</head>
 <body>
-<h1>JavaScript HTML Events</h1>
-<h2>The onclick Attribute</h2>
-
-<p>Click the button to display the date.</p>
-<button onclick="displayDate()">The time is?</button>
-
-<script>
-function displayDate() {
-  document.getElementById("demo").innerHTML = Date();
+		<button onClick='displayDate(this)'>
+		click on me	</button>
+    <script>
+    function displayDate(button){
+  button.innerHTML = Date()
 }
-</script>
-
-<p id="demo"></p>
-
+    </script>
 </body>
-</html> 
-
-```
--->
-
+</html>`}"
+:options="{
+    showTabs: false,
+    activeFile: '/index.html',
+    showConsole: true,
+     editorHeight: 400,
+        editorWidthPercentage: 40,
+      }"
+      :custom-setup="{
+        dependencies: {
+          'jquery': 'latest',
+        },
+      }"
+/>
 ---
 
 # Javascript String
