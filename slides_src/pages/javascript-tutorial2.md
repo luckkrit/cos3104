@@ -649,6 +649,8 @@ function myFunction2() {
 	<title></title>
 	</head>
 <body>
+<button onclick='myFunction1()'>Sort Alphabetically</button>
+<button onclick='myFunction2()'>Sort Numerically</button>
     <div id='app'></div>
     <script src='/index.js'></script>
 </body>
@@ -665,4 +667,286 @@ function myFunction2() {
       }"
 />
 
+---
 
+- หาจำนวนน้อยด้วย Math.min()
+
+```js {monaco-run}
+const sort = Math.min(40, 100, 1, 5, 25, 10)
+console.log(sort)
+```
+
+- ใช้กับ array
+
+```js {monaco-run}
+const numbers = [40, 100, 1, 5, 25, 10]
+function myArrayMin(arr) {
+  return Math.min.apply(null, arr);
+}
+console.log(myArrayMin(numbers))
+```
+
+---
+
+- Sorting Object Arrays
+
+- เรียง year น้อยไปมาก
+
+```js {monaco-run}
+const cars = [
+  {type:"Volvo", year:2016},
+  {type:"Saab", year:2001},
+  {type:"BMW", year:2010}
+];
+cars.sort(function(a, b){return a.year - b.year});
+console.log(cars)
+```
+
+---
+
+# Iteration
+
+<Sandpack
+theme="light" 
+template="vite" 
+:files="{
+        '/index.js': `const numbers = [45, 4, 9, 16, 25];
+let txt = '';
+numbers.forEach(myFunction);
+function myFunction(value, index, array) {
+  txt += value + '<br>';
+}
+document.getElementById('app').innerHTML = txt`,
+        '/index.html': `<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<meta name='description' content='' />
+	<meta name='author' content='' />
+	<meta name='viewport' content='user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width' />
+	<title></title>
+	</head>
+<body>
+    <div id='app'></div>
+    <script src='/index.js'></script>
+</body>
+</html>`}"
+:options="{
+    showConsole: true,
+     editorHeight: 400,
+        editorWidthPercentage: 40,
+      }"
+      :custom-setup="{
+        dependencies: {
+          'jquery': 'latest',
+        },
+      }"
+/>
+
+---
+
+- map()
+  - The map() method creates a new array by performing a function on each array element.
+  - The map() method does not execute the function for array elements without values.
+  - The map() method does not change the original array.
+
+- This example multiplies each array value by 2:
+
+```js {monaco-run}
+const numbers1 = [45, 4, 9, 16, 25];
+const numbers2 = numbers1.map(myFunction);
+
+function myFunction(value, index, array) {
+  return value * 2;
+}
+
+console.log(numbers1)
+console.log(numbers2)
+
+```
+
+---
+
+- flatMap()
+
+```js {monaco-run}
+const myArr = [1, 2, 3, 4, 5, 6];
+const newArr = myArr.flatMap((x) => x * 2);
+const newArr2 = myArr.map(x => [x, x * 10])
+const newArr3 = myArr.flatMap(x => [x, x * 10]);
+console.log(newArr)
+console.log(newArr2)
+console.log(newArr3)
+```
+
+---
+
+- filter() : The filter() method creates a new array with array elements that pass a test.
+
+```js {monaco-run}
+const numbers = [45, 4, 9, 16, 25];
+const over18 = numbers.filter(myFunction);
+
+function myFunction(value, index, array) {
+  return value > 18;
+}
+console.log(over18)
+```
+
+- โจทย์ ประยุกต์ใช้ตัวอย่างข้างบน กรองเอา age > 18
+
+```js
+
+const numbers = [{age:45}, {age:4}, {age:9}, {age:16}, {age:25}];
+
+```
+
+---
+
+```js {monaco-run}
+
+const numbers = [{age:45}, {age:4}, {age:9}, {age:16}, {age:25}];
+const over18 = numbers.filter(myFunction);
+
+function myFunction(value, index, array) {
+  return value.age > 18;
+}
+console.log(over18)
+```
+
+---
+
+- reduce() - ประยุกต์ใช้กับ การหาผลรวม
+- The reduce() method runs a function on each array element to produce (reduce it to) a single value.
+- Note that the function takes 4 arguments:
+  - The total (the initial value / previously returned value)
+  - The item value
+  - The item index
+  - The array itself
+
+```js {monaco-run}
+const numbers = [45, 4, 9, 16, 25];
+let sum = numbers.reduce(myFunction);
+
+function myFunction(total, value, index, array) {
+  return total + value;
+}
+console.log(sum)
+```
+
+---
+
+- reduceRight() - คล้ายกับ reduce แต่ทำจากขวามาซ้าย
+- The reduceRight() method runs a function on each array element to produce (reduce it to) a single value.
+- The reduceRight() works from right-to-left in the array.
+
+```js {monaco-run}
+const numbers = [45, 4, 9, 16, 25];
+let sum = numbers.reduceRight(myFunction);
+
+function myFunction(total, value, index, array) {
+  return total + value;
+}
+console.log(sum)
+```
+
+---
+
+- every()
+- The every() method checks if all array values pass a test.
+
+- This example checks if all array values are larger than 18:
+
+```js {monaco-run}
+const numbers = [45, 4, 9, 16, 25];
+let allOver18 = numbers.every(myFunction);
+
+function myFunction(value, index, array) {
+  return value > 18;
+}
+console.log(allOver18)
+```
+
+---
+
+- some()
+- The some() method checks if some array values pass a test.
+
+- This example checks if some array values are larger than 18:
+
+```js {monaco-run}
+const numbers = [45, 4, 9, 16, 25];
+let someOver18 = numbers.some(myFunction);
+
+function myFunction(value, index, array) {
+  return value > 18;
+}
+console.log(someOver18)
+```
+
+---
+
+- Array.from() : สร้าง Array จาก string
+
+```js {monaco-run}
+const arr = Array.from("ABCDEFG");
+console.log(arr)
+```
+
+---
+
+- Array.keys()
+
+- The Array.keys() method returns an Array Iterator object with the keys of an array.
+
+```js {monaco-run}
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+const keys = fruits.keys();
+let text = ''
+for (let x of keys) {
+  text += x + "<br>";
+}
+console.log(text)
+```
+
+---
+
+- entries() : return key:value paris
+
+```js {monaco-run}
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+const f = fruits.entries();
+let text = ''
+for (let x of f) {
+  text += x;
+}
+console.log(text)
+```
+
+---
+
+- with() : update array witout altering the original array
+
+```js {monaco-run}
+
+const months = ["Januar", "Februar", "Mar", "April"];
+const myMonths = months.with(2, "March");
+console.log(months)
+console.log(myMonths)
+```
+
+---
+
+- spread operator
+
+```js {monaco-run}
+const q1 = ["Jan", "Feb", "Mar"];
+const q2 = ["Apr", "May", "Jun"];
+const q3 = ["Jul", "Aug", "Sep"];
+const q4 = ["Oct", "Nov", "Dec"];
+
+const year = [...q1, ...q2, ...q3, ...q4];
+
+console.log(year)
+
+```

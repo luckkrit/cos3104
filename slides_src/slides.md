@@ -7,7 +7,7 @@ background: https://cover.sli.dev
 fonts:
     sans: Sarabun
 titleTemplate: '%s - COS3104'
-src: ./pages/javascript-tutorial.md
+src: ./pages/javascript-tutorial3.md
 transition: fade
 ---
 
