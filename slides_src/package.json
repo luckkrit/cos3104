@@ -13,10 +13,16 @@
     "build_chapter6": "slidev build --base /cos3105/slides/chapter6/ --out ../public/slides/chapter6",
     "build_js_tutorial": "slidev build --base /cos3104/slides/js_tutorial/ --out ../public/slides/js_tutorial",
     "build_js_tutorial2": "slidev build --base /cos3104/slides/js_tutorial2/ --out ../public/slides/js_tutorial2",
+    "build_js_tutorial3": "slidev build --base /cos3104/slides/js_tutorial3/ --out ../public/slides/js_tutorial3",
+    "build_jquery_tutorial": "slidev build --base /cos3104/slides/jquery_tutorial/ --out ../public/slides/jquery_tutorial",
     "clean_js_tutorial": "npx del-cli -f ../public/slides/js_tutorial",
     "clean_js_tutorial2": "npx del-cli -f ../public/slides/js_tutorial2",
+    "clean_js_tutorial3": "npx del-cli -f ../public/slides/js_tutorial3",
+    "clean_jquery_tutorial": "npx del-cli -f ../public/slides/jquery_tutorial",
     "clean_build_js_tutorial": "concurrently \"npm run clean_js_tutorial\" \"npm run build_js_tutorial\"",
-    "clean_build_js_tutorial2": "concurrently \"npm run clean_js_tutorial2\" \"npm run build_js_tutorial2\""
+    "clean_build_js_tutorial2": "concurrently \"npm run clean_js_tutorial2\" \"npm run build_js_tutorial2\"",
+    "clean_build_js_tutorial3": "concurrently \"npm run clean_js_tutorial3\" \"npm run build_js_tutorial3\"",
+    "clean_build_jquery_tutorial": "concurrently \"npm run clean_jquery_tutorial\" \"npm run build_jquery_tutorial\""
   },
   "dependencies": {
     "@slidev/cli": "^51.0.1",
