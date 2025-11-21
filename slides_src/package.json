@@ -6,33 +6,24 @@
     "build": "slidev build",
     "dev": "slidev --open",
     "export": "slidev export",
-    "export_chapter5": "slidev export --with-clicks --format pptx --output ./slides-export/chapter5",
-    "export_chapter6": "slidev export --with-clicks --format pptx --output ./slides-export/chapter6",
-    "build_chapter4": "slidev build --base /cos3105/slides/chapter4/ --out ../public/slides/chapter4",
-    "build_chapter5": "slidev build --base /cos3105/slides/chapter5/ --out ../public/slides/chapter5",
-    "build_chapter6": "slidev build --base /cos3105/slides/chapter6/ --out ../public/slides/chapter6",
-    "build_js_tutorial": "slidev build --base /cos3104/slides/js_tutorial/ --out ../public/slides/js_tutorial",
-    "build_js_tutorial2": "slidev build --base /cos3104/slides/js_tutorial2/ --out ../public/slides/js_tutorial2",
-    "build_js_tutorial3": "slidev build --base /cos3104/slides/js_tutorial3/ --out ../public/slides/js_tutorial3",
-    "build_jquery_tutorial": "slidev build --base /cos3104/slides/jquery_tutorial/ --out ../public/slides/jquery_tutorial",
-    "clean_js_tutorial": "npx del-cli -f ../public/slides/js_tutorial",
-    "clean_js_tutorial2": "npx del-cli -f ../public/slides/js_tutorial2",
-    "clean_js_tutorial3": "npx del-cli -f ../public/slides/js_tutorial3",
-    "clean_jquery_tutorial": "npx del-cli -f ../public/slides/jquery_tutorial",
-    "clean_build_js_tutorial": "concurrently \"npm run clean_js_tutorial\" \"npm run build_js_tutorial\"",
-    "clean_build_js_tutorial2": "concurrently \"npm run clean_js_tutorial2\" \"npm run build_js_tutorial2\"",
-    "clean_build_js_tutorial3": "concurrently \"npm run clean_js_tutorial3\" \"npm run build_js_tutorial3\"",
-    "clean_build_jquery_tutorial": "concurrently \"npm run clean_jquery_tutorial\" \"npm run build_jquery_tutorial\""
+    "cos3104": "slidev --open cos3104",
+    "build_ch3": "slidev build --base /cos3104/slides/ch3/ --out ../public/slides/ch3",
+    "export_ch3": "slidev export --with-clicks --timeout 60000 --wait 30000 --format pdf --output ./slides-export/ch3",
+    "clean_ch3": "del-cli -f ../public/slides/ch3",
+    "clean_build_nosql_tutorial": "concurrently \"npm run clean_ch3\" \"npm run build_ch3\""
   },
   "dependencies": {
-    "@slidev/cli": "^51.0.1",
+    "@slidev/cli": "^52.9.1",
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
-    "vue": "^3.5.13"
+    "slidev-addon-tldraw": "^0.4.2",
+    "slidev-component-zoom": "^1.1.0",
+    "slidev-theme-neversink": "^0.4.0",
+    "vue": "^3.5.24"
   },
   "devDependencies": {
-    "concurrently": "^9.1.2",
-    "playwright-chromium": "^1.49.1",
-    "sandpack-vue3": "^3.1.12"
+    "concurrently": "^9.2.1",
+    "del-cli": "^7.0.0",
+    "playwright-chromium": "^1.56.1"
   }
 }
