@@ -29,6 +29,6 @@ Reference: [https://en.wikipedia.org/wiki/List_of_programming_languages_by_type#
 
 ---
 
-<TLDraw2 :class="'inset-0 w-full h-full'" :doc="'https://luckkrit.github.io/cos3104/slides/ch3/tldraw/memory_cell.tdlr'" ></TLDraw2>
+<TLDraw2 :class="'inset-0 w-full h-full'" :doc="'slides/ch3/tldraw/memory_cell.tdlr'" ></TLDraw2>
 
 
