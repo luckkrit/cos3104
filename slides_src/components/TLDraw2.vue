@@ -54,6 +54,6 @@ function handleRelaseLock() {
                 🔑</span><span class="text-green-500" v-else>Lock 🔒</span> slide navigation</p>
 
         <tldraw v-if="isDev" :class="`${props.class}`" :doc="`${props.doc}`"></tldraw>
-        <tldraw v-if="!isDev" :class="`${props.class}`" :doc="`${base2}${snapshot}`"></tldraw>
+        <tldraw v-if="!isDev" :class="`${props.class}`" :doc="`${base2}${props.doc}`"></tldraw>
     </div>
 </template>
