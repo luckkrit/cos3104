@@ -1,21 +1,16 @@
 <script setup>
-import { ref, toRaw } from 'vue'
+import { ref } from 'vue'
 import { lockShortcuts } from '@slidev/client/state/storage.ts'
-import { onMounted, onUnmounted } from 'vue'
+import { onUnmounted } from 'vue'
 import { useMagicKeys, whenever } from '@vueuse/core'
 import { onSlideEnter } from '@slidev/client'
 const { escape } = useMagicKeys()
 let release = ref(null);
 const props = defineProps(['doc', 'class'])
-const snapshot = ref(null)
 const base = import.meta.env.BASE_URL
 const isDev = import.meta.env.DEV
 const base2 = base.substr(1)
 console.log(base, base2)
-onMounted(async () => {
-    const response = await fetch(`${base}${props.doc}`)
-    snapshot.value = await response.json()
-})
 onUnmounted(() => {
     if (isDev) {
 
