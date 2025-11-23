@@ -6,7 +6,7 @@
     "build": "slidev build",
     "dev": "slidev --open",
     "export": "slidev export",
-    "cos3104": "slidev --open cos3104",
+    "cos3104": "slidev cos3104 --open",
     "build_ch3": "slidev build cos3104 --base /cos3104/slides/ch3/ --out ../public/slides/ch3",
     "export_ch3": "slidev export cos3104 --with-clicks --timeout 60000 --wait 30000 --format pdf --output ./slides-export/ch3",
     "clean_ch3": "del-cli -f ../public/slides/ch3",
