@@ -13,10 +13,10 @@ export default defineConfig({
         title: 'COS3104',
         // social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
         sidebar: [
-            {
-                label: 'Tutorials',
-                autogenerate: { directory: 'tutorials' },
-            },
+            // {
+            //     label: 'Tutorials',
+            //     autogenerate: { directory: 'tutorials' },
+            // },
         ],
-		}), react()],
+    }), react()],
 });

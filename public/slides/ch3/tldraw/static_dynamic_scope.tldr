@@ -1,0 +1,128 @@
+{
+  "store": {
+    "shape:OpOsRo4eQheb9zrPE23UO": {
+      "x": 84.50010626360177,
+      "y": 200,
+      "rotation": 0,
+      "isLocked": false,
+      "opacity": 1,
+      "meta": {},
+      "id": "shape:OpOsRo4eQheb9zrPE23UO",
+      "type": "image",
+      "props": {
+        "w": 631,
+        "h": 400,
+        "assetId": "asset:-1401590385",
+        "playing": true,
+        "url": "",
+        "crop": null,
+        "flipX": false,
+        "flipY": false,
+        "altText": ""
+      },
+      "parentId": "page:page",
+      "index": "a1",
+      "typeName": "shape"
+    },
+    "asset:-1401590385": {
+      "id": "asset:-1401590385",
+      "type": "image",
+      "typeName": "asset",
+      "props": {
+        "name": "tldrawFile",
+        "src": "/tldraw/assets/hSF8KwwMXhr7ui2q-izv3-tldrawFile",
+        "w": 631,
+        "h": 400,
+        "fileSize": 233218,
+        "mimeType": "image/png",
+        "isAnimated": false
+      },
+      "meta": {}
+    },
+    "asset:1424109728": {
+      "id": "asset:1424109728",
+      "type": "image",
+      "typeName": "asset",
+      "props": {
+        "name": "tldrawFile",
+        "src": "/tldraw/assets/4_fZ9CR9Gp_Y8ha0FkxCU-tldrawFile",
+        "w": 519,
+        "h": 76,
+        "fileSize": 7333,
+        "mimeType": "image/png",
+        "isAnimated": false
+      },
+      "meta": {}
+    },
+    "page:page": {
+      "meta": {},
+      "id": "page:page",
+      "name": "Page 1",
+      "index": "a1",
+      "typeName": "page"
+    },
+    "document:document": {
+      "gridSize": 10,
+      "name": "",
+      "meta": {},
+      "id": "document:document",
+      "typeName": "document"
+    },
+    "shape:uTAvwz_BpzPhlDIVQZH60": {
+      "x": 122.21936632889015,
+      "y": 108.6811751904244,
+      "rotation": 0,
+      "isLocked": false,
+      "opacity": 1,
+      "meta": {},
+      "id": "shape:uTAvwz_BpzPhlDIVQZH60",
+      "type": "image",
+      "props": {
+        "w": 519,
+        "h": 76,
+        "assetId": "asset:1424109728",
+        "playing": true,
+        "url": "",
+        "crop": null,
+        "flipX": false,
+        "flipY": false,
+        "altText": ""
+      },
+      "parentId": "page:page",
+      "index": "a23yu",
+      "typeName": "shape"
+    }
+  },
+  "schema": {
+    "schemaVersion": 2,
+    "sequences": {
+      "com.tldraw.store": 4,
+      "com.tldraw.asset": 1,
+      "com.tldraw.camera": 1,
+      "com.tldraw.document": 2,
+      "com.tldraw.instance": 25,
+      "com.tldraw.instance_page_state": 5,
+      "com.tldraw.page": 1,
+      "com.tldraw.instance_presence": 6,
+      "com.tldraw.pointer": 1,
+      "com.tldraw.shape": 4,
+      "com.tldraw.asset.bookmark": 2,
+      "com.tldraw.asset.image": 5,
+      "com.tldraw.asset.video": 5,
+      "com.tldraw.shape.arrow": 6,
+      "com.tldraw.shape.bookmark": 2,
+      "com.tldraw.shape.draw": 2,
+      "com.tldraw.shape.embed": 4,
+      "com.tldraw.shape.frame": 1,
+      "com.tldraw.shape.geo": 10,
+      "com.tldraw.shape.group": 0,
+      "com.tldraw.shape.highlight": 1,
+      "com.tldraw.shape.image": 5,
+      "com.tldraw.shape.line": 5,
+      "com.tldraw.shape.note": 9,
+      "com.tldraw.shape.text": 3,
+      "com.tldraw.shape.video": 4,
+      "com.tldraw.binding.arrow": 1
+    }
+  }
+}

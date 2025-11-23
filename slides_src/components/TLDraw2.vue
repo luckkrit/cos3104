@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { isReadonly, ref } from 'vue'
 import { lockShortcuts } from '@slidev/client/state/storage.ts'
 import { onUnmounted } from 'vue'
 import { useMagicKeys, whenever } from '@vueuse/core'
