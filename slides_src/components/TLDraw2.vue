@@ -17,20 +17,28 @@ onMounted(async () => {
     snapshot.value = await response.json()
 })
 onUnmounted(() => {
-    handleRelaseLock()
+    if (isDev) {
+
+        handleRelaseLock()
+    }
 })
 
 onSlideEnter(() => {
     console.log("Slide Enter")
-    handleLock()
+    if (isDev) {
+        handleLock()
+    }
 })
 
 whenever(escape, () => {
-    console.log("Escape key")
-    if (release.value !== null) {
-        handleRelaseLock()
-    } else if (!release.value) {
-        handleLock()
+    if (isDev) {
+
+        console.log("Escape key")
+        if (release.value !== null) {
+            handleRelaseLock()
+        } else if (!release.value) {
+            handleLock()
+        }
     }
 })
 
@@ -50,7 +58,7 @@ function handleRelaseLock() {
 
 <template>
     <div>
-        <p class="text-sm opacity-50">💡 Press ESC to <span class="text-red-500" v-if="release">Unlock
+        <p v-if="isDev" class="text-sm opacity-50">💡 Press ESC to <span class="text-red-500" v-if="release">Unlock
                 🔑</span><span class="text-green-500" v-else>Lock 🔒</span> slide navigation</p>
 
         <tldraw v-if="isDev" :class="`${props.class}`" :doc="`${props.doc}`"></tldraw>
