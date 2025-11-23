@@ -10,7 +10,8 @@ const props = defineProps(['doc', 'class'])
 const snapshot = ref(null)
 const base = import.meta.env.BASE_URL
 const isDev = import.meta.env.DEV
-console.log(base)
+const base2 = base.substr(1)
+console.log(base, base2)
 onMounted(async () => {
     const response = await fetch(`${base}${props.doc}`)
     snapshot.value = await response.json()
@@ -53,6 +54,6 @@ function handleRelaseLock() {
                 🔑</span><span class="text-green-500" v-else>Lock 🔒</span> slide navigation</p>
 
         <tldraw v-if="isDev" :class="`${props.class}`" :doc="`${props.doc}`"></tldraw>
-        <tldraw v-if="!isDev" :class="`${props.class}`" :snapshot="`${snapshot}`"></tldraw>
+        <tldraw v-if="!isDev" :class="`${props.class}`" :doc="`${base2}${snapshot}`"></tldraw>
     </div>
 </template>
