@@ -28,7 +28,7 @@ Reference: [https://en.wikipedia.org/wiki/List_of_programming_languages_by_type#
 
 ---
 
-<TLDraw2 :class="'inset-0 w-full h-full'" :doc="'tldraw/memory_cell.tldr'" ></TLDraw2>
+![Variable Memory Map](/images/ch3/variable_memory_map.png)
 
 ---
 
@@ -138,6 +138,15 @@ A program variable is an abstraction of a computer memory cell or collection of 
 - The time at which a binding takes place is called **binding time**. Binding and binding times are prominent concepts in the semantics of programming languages.
 - Bindings can take place at language design time, language implementation time, compile time, load time, link time, or run time.
 
+
+- Entity = สิ่งที่มีตัวตนในโปรแกรม เช่น:
+	- Variables (ตัวแปร)
+	- Functions (ฟังก์ชัน)
+	- Types (ชนิดข้อมูล)
+	- Objects (วัตถุ)
+	- Constants (ค่าคงที่)
+	- Labels (ป้ายชื่อ)
+
 ---
 layout: top-title-two-cols
 columns: is-6
@@ -185,6 +194,8 @@ Type of binding:
 - The physical binding of a variable to a storage cell in a virtual memory environment is complex – page or segment of the address space is changed frequently (managed by computer hardware) .
 
 ---
+
+https://onlinegdb.com/K59yXtg8ZD
 
 ```csharp
 using System;
@@ -277,8 +288,8 @@ func(2) # func(0) //what happend?
 
 ---
 
-<TLDraw2 :class="'inset-0 w-full h-full'" :doc="'tldraw/memory_layout.tldr'" ></TLDraw2>
 
+![Memory Layout](/images/ch3/memory_layout.png)
 ---
 
 ### Static Variables (4.3.1)
@@ -289,7 +300,12 @@ func(2) # func(0) //what happend?
 
 ---
 
-<TLDraw2 :class="'inset-0 w-full h-full'" :doc="'tldraw/static_variables.tldr'" ></TLDraw2>
+https://onlinegdb.com/DAKoNYz_k
+
+<div class="w-[500px] mx-auto">
+
+![Static Variables](/images/ch3/static_variables.png)
+</div>
 ---
 
 https://onlinegdb.com/ELsXA6jjK
@@ -463,7 +479,10 @@ int main(){
 
 ---
 
-<TLDraw2 :class="'inset-0 w-full h-full'" :doc="'tldraw/static_scope.tldr'" ></TLDraw2>
+<div class="w-[500px] mx-auto">
+
+![Static Scope](/images/ch3/static_scope.png)
+</div>
 
 ---
 
@@ -640,8 +659,10 @@ g();
 
 ---
 
+<div class="w-[500px] mx-auto">
 
-<TLDraw2 :class="'inset-0 w-full h-full'" :doc="'tldraw/static_dynamic_scope.tldr'" ></TLDraw2>
+![Static dynamic](/images/ch3/static_dynamic.png)
+</div>
 
 ---
 layout: two-cols
@@ -898,3 +919,16 @@ int main() {
 - Exercise
 
 จงอธิบายข้อดีของ static local ของภาษา C/C++ เมื่อเปรียบเทียบกับตัวแปร global ?
+
+
+--- 
+
+- Abstract Syntax Tree (AST)
+
+https://astexplorer.net/
+
+https://observablehq.com/@aarebecca/ast-explorer
+
+```js
+if (x==0) x=x+1; else x=0;
+```
