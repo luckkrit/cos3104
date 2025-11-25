@@ -54,7 +54,6 @@ Reference: [https://en.wikipedia.org/wiki/List_of_programming_languages_by_type#
     - In COBOL, there are 300 reserved words, and most of them are common for programmers like LENGTH, BOTTOM, DESTINATION and COUNT.
   - [ Cannot ]{class="text-red-500"} redeclare variable that import from libraries that are defined in other programs units like Java import C and C++ libraries because [reserved words]{class="text-red-500"} might conflict with [ variable ]{class="text-red-500"} name.
 
-<ArrowDraw color="red" v-drag="[207,423,81,43,180]" />
 
 https://onlinegdb.com/GmRNoCEUq
 
