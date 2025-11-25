@@ -1066,7 +1066,7 @@ int main() {
 จงอธิบายข้อดีของ static local ของภาษา C/C++ เมื่อเปรียบเทียบกับตัวแปร global ?
 
 
---- 
+<!-- --- 
 
 - Abstract Syntax Tree (AST)
 
@@ -1084,3 +1084,4 @@ https://observablehq.com/@aarebecca/ast-explorer
 ```js
 if (x==0) x=x+1; else x=0;
 ```
+ -->
