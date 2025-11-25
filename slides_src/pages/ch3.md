@@ -1070,6 +1070,13 @@ int main() {
 
 - Abstract Syntax Tree (AST)
 
+AST stands for Abstract Syntax Tree - it's a tree representation of the syntactic structure of source code.
+When a parser processes code, it typically goes through these stages:
+
+1. Lexical analysis (tokenization) - breaks source code into tokens (keywords, identifiers, operators, etc.)
+2. Syntax analysis (parsing) - the parser takes those tokens and builds an AST based on the grammar rules
+3. The AST is then used for further processing like semantic analysis, optimization, or code generation
+
 https://astexplorer.net/
 
 https://observablehq.com/@aarebecca/ast-explorer
