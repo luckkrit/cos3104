@@ -56,6 +56,8 @@ Reference: [https://en.wikipedia.org/wiki/List_of_programming_languages_by_type#
 
 <ArrowDraw color="red" v-drag="[207,423,81,43,180]" />
 
+https://onlinegdb.com/GmRNoCEUq
+
 ```csharp
 using System;
 
@@ -70,6 +72,29 @@ public class HelloWorld
     }
 }
 
+```
+
+---
+
+- From previous example, C# has [Contextual Keywords]{class="text-red-500"}
+- Reserved Keywords (Cannot be used as identifiers)
+    - Keywords like int, class, public, if, while are reserved and cannot be used as variable names unless you use the @ prefix:
+
+https://onlinegdb.com/Y_mhDCVRcQ
+
+```csharp
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        var var = 10;
+        int @int = 5;     // ✓ Works with @ prefix
+        float @float = 2.5f;     // ✓ Works with @ prefix
+        Console.WriteLine ("var = {0}, @int = {1}, @float = {2}" ,var, @int, @float); // Contextual Keyword
+    }
+}
 ```
 
 ---
@@ -177,7 +202,7 @@ Type of binding:
 
 ## Binding of Attributes to Variables (4.1)
 
-- A binding is **static** if it first occurs before run time begins and remains [unchanged]{class="text-red-500"} throughout program execution. (Static Binding)
+- A binding is **static** if it first occurs before run time begins (compile time) and remains [unchanged]{class="text-red-500"} throughout program execution. (Static Binding)
 - If the binding first occurs during run time or can [change]{class="text-red-500"} in the course of program execution, it is called **dynamic**. (Dynamic Binding)
 - The physical binding of a variable to a storage cell in a virtual memory environment is complex – page or segment of the address space is changed frequently (managed by computer hardware) .
 
@@ -213,6 +238,63 @@ class GFG {
     }
 }
 
+```
+
+---
+
+```csharp
+using Newtonsoft.Json;
+
+string json = @"{
+    'name': 'John',
+    'age': 30,
+    'address': {
+        'city': 'Bangkok',
+        'country': 'Thailand'
+    },
+    'hobbies': ['reading', 'coding']
+}";
+
+// Parse to dynamic
+dynamic data = JsonConvert.DeserializeObject(json);
+
+// Access properties
+Console.WriteLine(data.name);              // John
+Console.WriteLine(data.age);               // 30
+Console.WriteLine(data.address.city);      // Bangkok
+Console.WriteLine(data.hobbies[0]);        // reading
+```
+
+---
+
+```csharp
+using Newtonsoft.Json;
+public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+    public Address Address { get; set; }
+    public List<string> Hobbies { get; set; }
+}
+public class Address
+{
+    public string City { get; set; }
+    public string Country { get; set; }
+}
+string json = @"{
+    'name': 'John',
+    'age': 30,
+    'address': {
+        'city': 'Bangkok',
+        'country': 'Thailand'
+    },
+    'hobbies': ['reading', 'coding']
+}";
+Person person = JsonConvert.DeserializeObject<Person>(json);
+Console.WriteLine(person.Name);              // John
+Console.WriteLine(person.Age);               // 30
+Console.WriteLine(person.Address.City);      // Bangkok
+Console.WriteLine(person.Hobbies[0]);        // reading
 ```
 
 ---
@@ -469,6 +551,36 @@ int main(){
 	- C++ and Ada allow access to "hidden" variables:
 		- unit.name (in Ada) 
 		- class_name::name (in C++)
+
+---
+
+https://onlinegdb.com/uF1vmbknX
+
+```csharp
+#include<iostream>
+using namespace std;
+
+class MyClass {
+public:
+    static int count;              // Static variable (declaration)
+    static void displayCount() {   // Static method
+        cout << "Count: " << count << endl;
+    }
+};
+
+// Initialize static variable outside class
+int MyClass::count = 0;
+
+int main() {
+    // Access static members WITHOUT creating an object
+    MyClass::count = 5;
+    MyClass::displayCount();       // Output: Count: 5
+    
+    // Can also access via object (but not recommended)
+    MyClass obj;
+    obj.count = 10;                // Works but confusing
+}
+```
 
 ---
 
