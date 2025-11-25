@@ -650,7 +650,7 @@ layout: two-cols
 
 <v-click>
 
-- Dynamic
+- Dynamic and static
 </v-click>
 
 https://onlinegdb.com/n9E-USPy3
