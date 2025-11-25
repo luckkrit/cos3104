@@ -8,7 +8,7 @@
     "export": "slidev export",
     "cos3104": "slidev cos3104 --open",
     "build_ch3": "slidev build cos3104 --base /cos3104/slides/ch3/ --out ../public/slides/ch3",
-    "export_ch3": "slidev export cos3104 --with-clicks --timeout 60000 --wait 30000 --format pdf --output ./slides-export/ch3",
+    "export_ch3": "slidev export cos3104 --with-clicks --timeout 60000 --wait 30000 --format pdf --output ./slides-export/pl_ch3_variable_bindings",
     "clean_ch3": "del-cli -f ../public/slides/ch3",
     "clean_build_ch3": "concurrently \"npm run clean_ch3\" \"npm run build_ch3\""
   },

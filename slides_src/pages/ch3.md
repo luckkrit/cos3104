@@ -506,6 +506,33 @@ int main() {
 
 ---
 
+### Explicit Heap-Dynamic Variables (4.3.3)
+
+- Explicit heap-dynamic variables are nameless (abstract) memory cells that are allocated and deallocated by explicit run-time instructions written by the programmer. 
+- The disadvantages of explicit heap-dynamic variables are the difficulty of using pointer and reference variables correctly, the cost of references to the variables, and the complexity of the required storage management implementation. 
+
+
+```c
+People *p = (struct People *)malloc(sizeof(People));
+```
+
+---
+
+### Implicit Heap-Dynamic Variables (4.3.4)
+
+- Implicit heap-dynamic variables are bound to heap storage only when they are assigned values. In fact, all their attributes are bound every time they are assigned.
+
+```python
+heights = [74, 84, 86, 90, 71]
+```
+
+
+<Admonition color="amber-light" textAlign="left" title="Note">
+The entire mechanism is implicit—the programmer never wrote malloc() or free(). The system manages the Heap storage binding and updates all attributes (type, size, location) dynamically at runtime, every time the variable is assigned or modified.
+</Admonition>
+
+---
+
 ## Scope (5.)
 
 - The **scope** of a variable is the range of statements in which the variable is visible. A variable is **visible** in a statement if it can be referenced or assigned in that statement.
