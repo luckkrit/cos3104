@@ -45,18 +45,6 @@ Reference: [https://en.wikipedia.org/wiki/List_of_programming_languages_by_type#
   - Case Sensitive – [rose, ROSE]{class="text-red-500"} are hard to read - **Readability**
     - Function naming can lead to **writability problem**. For example, In Java, **parseInt** is allowed but [ParseInt]{class="text-red-500"} and [parseint]{style="color:red"} is not allowed.
 
----
-
-```cpp
-int x = 5;    // global name x
-void foo() {
-    int x = 10;  // local name x
-    scanf ( “%d”, &x  );
-}
-```
-
-- [x]{class="text-red-500"} -> variable name ( global & local variable)
-- [foo & scanf]{class="text-red-500"} -> function name
 
 ---
 
@@ -95,19 +83,6 @@ A program variable is an abstraction of a computer memory cell or collection of 
 - **Type** - The type of a variable determines the range of values the variable can store and the set of operations that are defined for values of the type.
 - **Value** - The value of a variable is the contents of the memory cell or cells associated with the variable.
 
----
-
-- Compiler stores variables in Symbol Table
-
-| Name | Type  | Address | Value |
-| :--: | :---: | :-----: | :---: |
-|  x   |  int  | 0x0318  |   3   |
-|  y   | char  | 0x031c  |  'A'  |
-| sum  | float | 0x0320  |  5.5  |
-
-<Admonition color="amber-light" textAlign="left" title="Note">
-	Address in the table is not the actual address, it is symbolic address
-</Admonition>
 
 ---
 
@@ -146,6 +121,19 @@ A program variable is an abstraction of a computer memory cell or collection of 
 	- Objects (วัตถุ)
 	- Constants (ค่าคงที่)
 	- Labels (ป้ายชื่อ)
+
+---
+
+```cpp
+int x = 5;    // global name x
+void foo() {
+    int x = 10;  // local name x
+    scanf ( “%d”, &x  );
+}
+```
+
+- [x]{class="text-red-500"} -> variable name ( global & local variable)
+- [foo & scanf]{class="text-red-500"} -> function name
 
 ---
 layout: top-title-two-cols
@@ -189,8 +177,8 @@ Type of binding:
 
 ## Binding of Attributes to Variables (4.1)
 
-- A binding is **static** if it first occurs before run time begins and remains [unchanged]{class="text-red-500"} throughout program execution. 
-- If the binding first occurs during run time or can [change]{class="text-red-500"} in the course of program execution, it is called **dynamic**. 
+- A binding is **static** if it first occurs before run time begins and remains [unchanged]{class="text-red-500"} throughout program execution. (Static Binding)
+- If the binding first occurs during run time or can [change]{class="text-red-500"} in the course of program execution, it is called **dynamic**. (Dynamic Binding)
 - The physical binding of a variable to a storage cell in a virtual memory environment is complex – page or segment of the address space is changed frequently (managed by computer hardware) .
 
 ---
@@ -229,6 +217,20 @@ class GFG {
 
 ---
 
+- Compiler stores variables in Symbol Table
+
+| Name | Type  | Address | Value |
+| :--: | :---: | :-----: | :---: |
+|  x   |  int  | 0x0318  |   3   |
+|  y   | char  | 0x031c  |  'A'  |
+| sum  | float | 0x0320  |  5.5  |
+
+<Admonition color="amber-light" textAlign="left" title="Note">
+	Address in the table is not the actual address, it is symbolic address
+</Admonition>
+
+---
+
 ## Type Bindings (4.2)
 
 - Before **a variable can be referenced** in a program, it must be **bound to a data type**. The two important aspects of this binding are how the type is specified and when the binding takes place.
@@ -260,6 +262,8 @@ class GFG {
 
 ---
 
+https://onlinegdb.com/a23fbB1bOo
+
 ```python
 def func(max):
 	imaxx = range(max)
@@ -277,6 +281,7 @@ func(2) # func(0) //what happend?
 
 - Python check type at runtime
 </Admonition>
+
 ---
 
 ## Storage Bindings and Lifetime (4.3)
@@ -434,10 +439,11 @@ Why variable scope?
 		- one of type *int*
 		- another *float*
 
+https://onlinegdb.com/NwCuuYk2d
+
 ```cpp
 #include <iostream>
 using namespace std;
-
 int x;
 void foo(int y)
 {
