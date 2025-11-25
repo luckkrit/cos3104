@@ -124,7 +124,7 @@ A program variable is an abstraction of a computer memory cell or collection of 
 
    3.1 Static Variables
 
-   3.2 Static-Dynamic Variables
+   3.2 Stack-Dynamic Variables
 
    3.3 Explicit Heap-Dynamic Variables
 
