@@ -10,20 +10,22 @@
     "build_ch3": "slidev build cos3104 --base /cos3104/slides/ch3/ --out ../public/slides/ch3",
     "export_ch3": "slidev export cos3104 --with-clicks --timeout 60000 --wait 30000 --format pdf --output ./slides-export/pl_ch3_variable_bindings",
     "clean_ch3": "del-cli -f ../public/slides/ch3",
-    "clean_build_ch3": "concurrently \"npm run clean_ch3\" \"npm run build_ch3\""
+    "clean_build_ch3": "concurrently \"npm run clean_ch3\" \"npm run build_ch3\"",
+    "export_ch5": "slidev export cos3104 --with-clicks --timeout 60000 --wait 30000 --format pdf --output ./slides-export/pl_ch5_variable_bindings",
+    "export_ch7": "slidev export cos3104 --with-clicks --timeout 60000 --wait 30000 --format pdf --output ./slides-export/pl_ch7_subprograms"
   },
   "dependencies": {
-    "@slidev/cli": "^52.9.1",
+    "@slidev/cli": "^52.2.4",
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
-    "slidev-addon-tldraw": "^0.4.2",
+    "sandpack-vue3": "^3.1.12",
     "slidev-component-zoom": "^1.1.0",
     "slidev-theme-neversink": "^0.4.0",
-    "vue": "^3.5.24"
+    "vue": "^3.5.18"
   },
   "devDependencies": {
     "concurrently": "^9.2.1",
     "del-cli": "^7.0.0",
-    "playwright-chromium": "^1.56.1"
+    "playwright-chromium": "^1.54.1"
   }
 }
