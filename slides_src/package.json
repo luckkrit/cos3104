@@ -19,6 +19,9 @@
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
     "sandpack-vue3": "^3.1.12",
+    "slidev-addon-cpp-runner": "^0.1.2",
+    "slidev-addon-python-runner": "^0.1.3",
+    "slidev-addon-window-mockup": "^0.3.0",
     "slidev-component-zoom": "^1.1.0",
     "slidev-theme-neversink": "^0.4.0",
     "vue": "^3.5.18"
