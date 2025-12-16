@@ -215,7 +215,7 @@ layout: side-title
 
 - A widening conversion converts a value to a type that can include at least approximations of all of the values of the origirnal type. In Java, converting `int` to `float` is a widening conversion.
 
-- In general, widening conversion is safer than narrowing, but in some conversions the precision may be lost. For example, 32-bit integers allow at least 9 decimal digits of precision. But 32-bit floating-point values have only about seven decimal digits of precision (because of the space used for the exponent).
+- In general, **widening conversion is safer than narrowing**, but in some conversions **the precision may be lost**. For example, 32-bit integers allow at least 9 decimal digits of precision. But 32-bit floating-point values have only about seven decimal digits of precision (because of the space used for the exponent).
 
 - The type of conversions can be either **explicit** or **implicit**.
 
@@ -226,17 +226,17 @@ layout: side-title
 [Type Mixing (Mixed-Mode Expressions) (1.2)]{class="text-2xl"}
 
 
-   1. Mixed-mode operation is an arithmetic expression where operands have different numeric data types (int, float) , causing the language to perform implicit numeric type conversion (also called numeric promotion) so the operation can be evaluated.
+   1. Mixed-mode operation is an arithmetic expression where operands have **different numeric data types** (int, float) , causing the language to perform **implicit numeric type conversion** (also called **numeric promotion**) so the operation can be evaluated.
 
    - Example: 
-      - `int` + `float` → automatic coercion to `float` which is an implicit type conversion that is initiated by the compiler or runtime system.
+      - `int` + `float` → **automatic coercion** to `float` which is an **implicit type conversion** that is initiated by the compiler or runtime system.
       - `int a = (int)5.0;` - this is an explicit type conversion (cast) requested by the programmer, not coercion. 
 
 ---
 
-   2. Coercion (implicit type conversion) = one way to handle mixed-mode expressions by automatically converting types.
+   2. Coercion (implicit type conversion) = **one way** to handle mixed-mode expressions by automatically converting types.
 
-   - Coercion can reduce program reliability because errors may occur when the compiler automatically converts between incompatible types without the programmer's explicit approval.
+   - Coercion can **reduce program reliability** because errors may occur when the compiler **automatically converts between incompatible types without the programmer's explicit approval**.
 
 
    - Coercion can cause `overflow` or `underflow` when the converted value cannot fit in the target type
@@ -453,7 +453,7 @@ console.log(z)
 ```
 </div>
 
-- same precedence `+` `-`, then associativity rule `Left to Right`
+- same precedence `+` `-`, then associativity rule `Left to Right` (depends on operator)
 
 ::right::
 
@@ -466,7 +466,7 @@ console.log(z)
 ```
 </div>
 
-- difference precedence `*` (higher) `+` (lower), then associativity rule `Right to Left`
+- difference precedence `*` (higher) `+` (lower), then associativity rule `Right to Left` (depends on operator)
 
 ::default::
 
@@ -496,6 +496,12 @@ the arithmetic precedence and associativity rules in all major languages (C, C++
 
 </Admonition>
 
+<StickyNote v-drag="[335,442,300,81]" color="amber-light" textAlign="left" width="180px" title="Note">
+# Right-associative (Python's way)
+
+2 ** 3 ** 2  →  2 ** (3 ** 2)  →  2 ** 9  →  512
+</StickyNote>
+
 ---
 layout: side-title
 ---
@@ -519,8 +525,6 @@ layout: side-title
 
 ---
 
-
-
 [Operand Evaluation Order (3.1)]{class="text-2xl"}
 
 
@@ -542,6 +546,16 @@ int main()
 }
 ```
 
+<StickyNote v-drag="[498,169,386,217]" color="amber-light" textAlign="left" width="180px" title="Note">
+What undefined behavior means:
+
+- Compiler can generate ANY result
+- Different compilers → different results (both "correct")
+- Same compiler, different flags → different results
+- Same compiler, different versions → different results
+- Not a bug - the code itself is invalid
+</StickyNote>
+
 ---
 
 <div class="text-xs">
@@ -554,6 +568,18 @@ int main()
 | **Python** | No | Very safe | N/A (++ not allowed) | No operator affects variables inside expressions |
 
 </div>
+
+
+<StickyNote v-drag="[302,269,386,217]" color="amber-light" textAlign="left" width="180px" title="Note">
+What undefined behavior means:
+
+- Compiler can generate ANY result
+- Different compilers → different results (both "correct")
+- Same compiler, different flags → different results
+- Same compiler, different versions → different results
+- Not a bug - the code itself is invalid
+</StickyNote>
+
 ---
 layout: two-cols
 ---
@@ -672,6 +698,18 @@ int main( ){
 
    - Disadvantage: limits some compiler optimizations
    - Java requires that operands appear to be evaluated in left-to-right order
+
+
+
+<StickyNote v-drag="[582,0,371,217]" color="amber-light" textAlign="left" width="180px" title="Note">
+// Well-defined code
+
+A + B + C
+- Compiler can evaluate as (A + B) + C or A + (B + C)
+- Both are mathematically equivalent and valid
+- The language allows flexibility, compiler optimizes
+- This is allowed optimization on well-defined code
+</StickyNote>
 
 ---
 
