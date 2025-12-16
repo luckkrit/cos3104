@@ -1114,6 +1114,9 @@ layout: side-title
 
 </div>
 
+<!-- - `if (a < b == c < d)` it can parse as `(a<b) == (c<d)` that is two levels in C
+- `a + 5 < b == c - 3 < d` it can parse as `a + 5 < b  AND  b == b  AND  b < c` that is same level in Python -->
+
 <Admonition v-drag="[14,478,953,67]" title="Info" color="teal-light" width="300px">
 
 the relation precedence in all major languages (C, C++, Java, C#, Python, Pascal, Ada) are very similar, with only a few differences.
