@@ -8,14 +8,14 @@
     "export": "slidev export",
     "cos3104": "slidev cos3104 --open",
     "build_ch3": "slidev build cos3104 --base /cos3104/slides/ch3/ --out ../public/slides/ch3",
-    "export_ch3": "slidev export cos3104 --with-clicks --timeout 60000 --wait 30000 --format pdf --output ./slides-export/pl_ch3_variable_bindings",
+    "export_ch3": "slidev export cos3104 --with-clicks --timeout 60000 --wait 60000 --format pdf --output ./slides-export/pl_ch3_variable_bindings",
     "clean_ch3": "del-cli -f ../public/slides/ch3",
     "clean_build_ch3": "concurrently \"npm run clean_ch3\" \"npm run build_ch5\"",
     "build_ch5": "slidev build cos3104 --base /cos3104/slides/ch5/ --out ../public/slides/ch5",
     "clean_ch5": "del-cli -f ../public/slides/ch5",
     "clean_build_ch5": "concurrently \"npm run clean_ch5\" \"npm run build_ch5\"",
-    "export_ch5": "slidev export cos3104 --with-clicks --timeout 60000 --wait 30000 --format pdf --output ./slides-export/pl_ch5_expressions_assignments",
-    "export_ch7": "slidev export cos3104 --with-clicks --timeout 60000 --wait 30000 --format pdf --output ./slides-export/pl_ch7_subprograms"
+    "export_ch5": "slidev export cos3104 --with-clicks --timeout 60000 --wait 60000 --format pdf --output ./slides-export/pl_ch5_expressions_assignments",
+    "export_ch7": "slidev export cos3104 --with-clicks --timeout 60000 --wait 60000 --format pdf --output ./slides-export/pl_ch7_subprograms"
   },
   "dependencies": {
     "@slidev/cli": "^52.2.4",

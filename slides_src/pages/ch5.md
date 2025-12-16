@@ -497,7 +497,8 @@ the arithmetic precedence and associativity rules in all major languages (C, C++
 </Admonition>
 
 <StickyNote v-drag="[335,442,300,81]" color="amber-light" textAlign="left" width="180px" title="Note">
-# Right-associative (Python's way)
+
+**Right-associative (Python's way)**
 
 2 ** 3 ** 2  →  2 ** (3 ** 2)  →  2 ** 9  →  512
 </StickyNote>
