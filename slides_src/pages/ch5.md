@@ -281,6 +281,7 @@ int main() {
     return 0;
 }
 ```
+
 ---
 
 [List of languages that support mixed-mode]{class="text-2xl"}
@@ -366,17 +367,17 @@ Based on number of operands:
 
 [Operator Precedence Table]{class="text-2xl"}
 
-
 | Rank | C | Pascal | Python |
 | :---: | :---: | :---: | :---: |
-| **1** | * | not | power (**) |
-| **2** | + | * | not |
-| **3** | ==, != | + | * |
-| **4** | <, >, <=, >= | <, >, =, <> | + |
-| **5** | not (!) | and | <, >, == |
+| **1** | not (!) | not | power (**) |
+| **2** | * | * | * |
+| **3** | + | + | + |
+| **4** |<, >, <=, >=  | <, >, =, <> | <, >, <=, >=, ==, != |
+| **5** | ==, !=  | and | not |
 | **6** | and (&&) | or | and |
 | **7** | or | | or |
 | **8** | = | := | = |
+
 
 
 ---
@@ -392,7 +393,7 @@ https://onlinegdb.com/Km2_c0xlp
 
 <div class="w-full">
 
-```cpp {monaco-run} window
+```cpp window
 #include <iostream>
 
 int main()
@@ -416,7 +417,7 @@ https://onlinegdb.com/mQ-2N3Tkxt
 
 <div class="w-full">
 
-```python {monaco-run} window
+```python window
 a = 1
 b = 6
 print("!a*5 == b" , not a*5 == b)
@@ -445,7 +446,7 @@ layout: two-cols-title
 
 <div class="w-full">
 
-```js {monaco-run} window
+```js window
 z = 1 + 2 - 3
 z = 3 - 3
 console.log(z)
@@ -458,7 +459,7 @@ console.log(z)
 
 <div class="w-full">
 
-```js {monaco-run} window
+```js window
 z = 1 + 2 * 3
 z = 1 + 6
 console.log(z)
@@ -526,7 +527,7 @@ layout: side-title
 
 https://onlinegdb.com/tqcgS8RGv
 
-```c {monaco-run} window
+```c window
 #include <stdio.h>
 //https://onlinegdb.com/tqcgS8RGv
 //19 for c14
@@ -947,7 +948,7 @@ if (x < y) {  // Mixed-mode relational expression
 
 https://onlinegdb.com/YeyNdvdThN
 
-```swift window
+```swift window {'title':'Swift'}
 let x = 5     // Int
 let y = 5.0   // Double
 
@@ -975,7 +976,7 @@ char → int → long → float → double
 
 1. Integer vs Float/Double
 
-```c window
+```c window 
 int x = 5;
 double y = 3.14;
 
@@ -1134,7 +1135,7 @@ https://onlinegdb.com/Wpf3Lxtb6
 
 <div class="w-full">
 
-```python {monaco-run} window
+```python window
 if 3<4 == 2<3 :
     print("3<4 == 2<3 => true")
 else :
@@ -1465,7 +1466,7 @@ console.log(`a = ${a}, b = ${b}`)
 
 https://onlinegdb.com/VsJJ-d8KF
 
-```c {monaco-run} window
+```c window
 #include <stdio.h>
 
 int main() {
@@ -1480,6 +1481,8 @@ int main() {
     return 0;
 }
 ```
+
+**Cannot predict ‘b’ value**
 
 ---
 
@@ -1516,7 +1519,7 @@ Iteration 6: index=5, check (5 < 5)=FALSE AND LIST[5] ❌ CRASH!
 https://onlinegdb.com/91L6PpHuk
 
 
-```python {monaco-run} window
+```python window
 
 A = [2, 8, 1, -3, 4]
 key = 6
@@ -1695,7 +1698,7 @@ console.log(average)
 https://onlinegdb.com/xCvRo4To_
 
 
-```py {monaco-run} window
+```py window
 # multiple target assignments
 average = sum = count = 1
 
@@ -1790,7 +1793,7 @@ To explain:
 
 https://onlinegdb.com/xCvRo4To_
 
-```python {monaco-run} window
+```python window
 # multiple target assignments
 average = sum = count = 1
 
