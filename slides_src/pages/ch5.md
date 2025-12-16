@@ -942,7 +942,7 @@ layout: side-title
 
 - Mixed-mode operation is an relation expression where operands have different numeric data types (int, float) , causing the language to perform implicit numeric type conversion (also called numeric promotion) so the operation can be evaluated.
 
-- A mixed-mode operation occurs when a relation operator is applied to two operands of different numeric types (such as int, float, double).
+- A mixed-mode operation occurs when an operator (arithmetic or relational) is applied to two operands of different numeric types (such as int, float, double).
 
 ---
 
