@@ -15,6 +15,10 @@
     "clean_ch5": "del-cli -f ../public/slides/ch5",
     "clean_build_ch5": "concurrently \"npm run clean_ch5\" \"npm run build_ch5\"",
     "export_ch5": "slidev export cos3104 --with-clicks --timeout 60000 --wait 60000 --format pdf --output ./slides-export/pl_ch5_expressions_assignments",
+    "build_ch6": "slidev build cos3104 --base /cos3104/slides/ch6/ --out ../public/slides/ch6",
+    "clean_ch6": "del-cli -f ../public/slides/ch6",
+    "clean_build_ch6": "concurrently \"npm run clean_ch6\" \"npm run build_ch6\"",
+    "export_ch6": "slidev export cos3104 --with-clicks --timeout 60000 --wait 60000 --format pdf --output ./slides-export/pl_ch6_control_statements",
     "export_ch7": "slidev export cos3104 --with-clicks --timeout 60000 --wait 60000 --format pdf --output ./slides-export/pl_ch7_subprograms"
   },
   "dependencies": {

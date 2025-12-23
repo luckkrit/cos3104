@@ -7,7 +7,7 @@ background: https://cover.sli.dev
 fonts:
     sans: Sarabun
 titleTemplate: "%s - COS3103"
-src: ./pages/nosql-tutorial2.md
+# src: ./pages/nosql-tutorial2.md
 transition: none
 addons:
     - slidev-component-zoom

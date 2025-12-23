@@ -521,7 +521,7 @@ public class MyClass {
 
 <div class="mx-auto w-[500px]">
 
-![goto switch and label](/images/ch8/goto_switch_label.png)
+![goto switch and label](/images/ch6/goto_switch_label.png)
 </div>
 
 ---
@@ -819,7 +819,7 @@ elif count < 1000 :
 
 <div class="mx-auto w-[250px]">
 
-![Multiple Selection If](/images/ch8/multiple_selection_if.png)
+![Multiple Selection If](/images/ch6/multiple_selection_if.png)
 </div>
 
 ---
@@ -870,7 +870,7 @@ layout: two-cols-title
 
 <div class="mx-auto w-[250px]">
 
-![Multiple Selection If](/images/ch8/multiple_selection_if.png)
+![Multiple Selection If](/images/ch6/multiple_selection_if.png)
 </div>
 
 
@@ -968,7 +968,7 @@ The designer must answer these:
 ::right::
 <div class="mx-auto w-[300px]">
 
-![Iteration](/images/ch8/iteration.png)
+![Iteration](/images/ch6/iteration.png)
 </div>
 
 ---
@@ -1472,7 +1472,7 @@ for(i=0;i<10;i++){
     continue;
   }
 }
-````
+```
 
 ::right::
 
@@ -1483,7 +1483,7 @@ while(i<10){
     continue;
   }
 }
-````
+```
 ---
 
 [continue in C/C++,C#]{class="text-2xl"}
@@ -1734,7 +1734,7 @@ layout: full
 
 <div class="mx-auto w-[250px]">
 
-![controversy](/images/ch8/controversy.png)
+![controversy](/images/ch6/controversy.png)
 </div>
 
 ---
@@ -1766,7 +1766,7 @@ Controversy = a serious disagreement or debate where people have strong, opposin
 
 <div class="mx-auto w-[210px]">
 
-![example](/images/ch8/example_goto.png)
+![example](/images/ch6/example_goto.png)
 </div>
 ---
 
