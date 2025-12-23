@@ -2141,6 +2141,37 @@ goto label;
 
 ---
 
+[Example goto]{class="text-2xl"}
+
+
+https://www.onlinegdb.com/Y-QG2OCki
+
+```c
+#include <stdio.h>
+
+int main(){
+    int i=0;
+    int j=5;
+    
+    // Declare jump table BEFORE using it
+    void *jumptable[2] = {&&end, &&loop};
+    
+loop:
+    printf("i = %d\n", i);
+    i++;
+    
+    // Use computed goto (GCC extension)
+    int cond = (i < j);      // 1 if true, 0 if false
+    goto *jumptable[cond];   // Jump to jumptable[0] or jumptable[1]
+    
+end:
+    return 0;
+}
+```
+
+---
+
+
 https://onlinegdb.com/tZI0grDB5
 
 ```cpp
