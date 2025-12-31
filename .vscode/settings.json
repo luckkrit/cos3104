@@ -1,3 +1,7 @@
 {
-  "slidev.include": ["**/slides.md", "slides_src/cos3104.md"]
+  "slidev.include": ["**/slides.md", "slides_src/cos3104.md"],
+    "markdown.copyFiles.destination": {
+    "*.md": "../../public/images/${documentBaseName}/${documentBaseName}.png"
+  },
+  "markdown.copyFiles.overwriteBehavior": "nameIncrementally"
 }

@@ -1,0 +1,22 @@
+services:
+  slidev:
+    image: node:20-alpine
+    container_name: cos3104-slidev
+    working_dir: /app/slides_src
+    volumes:
+      # Mount slides_src folder for hot reload
+      - ./slides_src:/app/slides_src
+      # Use named volume for node_modules (better performance)
+      - slidev_modules:/app/slides_src/node_modules
+    ports:
+      - "3031:3031"
+    # Use cos3103 script (without Windows-specific commands)
+    command: sh -c "npm install && npm run cos3104"
+    stdin_open: true
+    tty: true
+    environment:
+      - NODE_ENV=development
+    restart: unless-stopped
+
+volumes:
+  slidev_modules:

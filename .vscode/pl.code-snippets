@@ -77,5 +77,84 @@
       "::default::"
     ],
     "description": "Two cols title layout"
-  }
+  },
+    "MD Magic Move": {
+    "prefix": "mdmm",
+    "body": ["````md magic-move", "", "````"],
+    "description": "md magic-move"
+  },
+  "v-show click=0": {
+    "prefix": "vsh0",
+    "body": ["<div v-show=\"\\$slidev.nav.clicks == 0\">", "", "</div>"],
+    "description": "v-show click=0"
+  },
+  "v-show click=1": {
+    "prefix": "vsh1",
+    "body": ["<div v-show=\"\\$slidev.nav.clicks == 1\">", "", "</div>"],
+    "description": "v-show click=1"
+  },
+  "Admonition in neversink theme": {
+    "prefix": "admo",
+    "body": [
+      "<Admonition title=\"Info\" color=\"teal-light\" width=\"300px\" v-drag>",
+      "$0",
+      "</Admonition>"
+    ],
+    "description": "Admonition in neversink theme"
+  },
+  "StickyNote in neversink theme": {
+    "prefix": "stck",
+    "body": [
+      "<StickyNote color=\"amber-light\" textAlign=\"left\" width=\"180px\" title=\"Title\" v-drag>",
+      "$0",
+      "</StickyNote>"
+    ],
+    "description": "StickyNote in neversink theme"
+  },
+  "Box in neversink theme": {
+    "prefix": "boxx",
+    "body": ["<Box v-drag>", "$0", "</Box>"],
+    "description": "Box in neversink theme"
+  },
+    "Wrap img with class": {
+    "prefix": "imgf",
+    "body": [
+      "<div class=\"w-fit mx-auto\">",
+      "",
+      "${TM_SELECTED_TEXT/!\\[.*\\]\\(.*?public(\\/.*\\/([^\\/]+)\\.[a-z]+)\\).*/![$2]($1)/}{.max-h-50vh$0}",
+      "</div>"
+    ],
+    "description": "Wrap selected image with class"
+  },
+  "Wrap with v-click": {
+    "prefix": "vclk",
+    "body": ["<div v-click>", "", "${TM_SELECTED_TEXT}", "</div>"],
+    "description": "Wrap with v-click"
+  },
+  "Wrap with flex 2 columns": {
+    "prefix": "f2cl",
+    "body": [
+      "<div class=\"flex gap-2\">",
+      "<div class=\"w-1/2\">",
+      "${TM_SELECTED_TEXT}",
+      "</div>",
+      "<div class=\"w-1/2\">",
+      "",
+      "</div>",
+      "</div>"
+    ],
+    "description": "Wrap flex 2 columns",
+	"Draw Arrow": {
+    "prefix": "arrw",
+    "body": [
+		"<ArrowDraw color=\"red\" v-drag />"
+	],
+    "description": "Draw Arrow",
+	"Draw Thumb": {
+    "prefix": "arrw",
+    "body": [
+		"<Thumb color=\"green-light\" width=\"300px\" v-drag />"
+	],
+    "description": "Draw Thumb"
+
 }
