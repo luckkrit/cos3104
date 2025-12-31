@@ -10,7 +10,7 @@ services:
       - slidev_modules:/app/slides_src/node_modules
     ports:
       - "3031:3031"
-    # Use cos3103 script (without Windows-specific commands)
+    # Use cos3104 script (without Windows-specific commands)
     command: sh -c "npm install && npm run cos3104"
     stdin_open: true
     tty: true
