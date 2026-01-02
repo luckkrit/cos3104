@@ -50,9 +50,14 @@
     "body": ["```pascal", "$0", "```"],
     "description": "Wraps selected text with defined strings"
   },
+  "Wrap with c#`": {
+    "prefix": "csharp`",
+    "body": ["```csharp", "$0", "```"],
+    "description": "Wraps selected text with defined strings"
+  },
   "Wrap with text-2xl": {
     "prefix": "t2xl",
-    "body": ["[$0]{class=\"text-2xl\"}"],
+    "body": ["[${TM_SELECTED_TEXT}$0]{class=\"text-2xl\"}"],
     "description": "Wraps selected text with defined strings"
   },
   "Wrap with imgw": {
@@ -78,7 +83,7 @@
     ],
     "description": "Two cols title layout"
   },
-    "MD Magic Move": {
+  "MD Magic Move": {
     "prefix": "mdmm",
     "body": ["````md magic-move", "", "````"],
     "description": "md magic-move"
@@ -116,7 +121,7 @@
     "body": ["<Box v-drag>", "$0", "</Box>"],
     "description": "Box in neversink theme"
   },
-    "Wrap img with class": {
+  "Wrap img with class": {
     "prefix": "imgf",
     "body": [
       "<div class=\"w-fit mx-auto\">",
@@ -143,18 +148,16 @@
       "</div>",
       "</div>"
     ],
-    "description": "Wrap flex 2 columns",
-	"Draw Arrow": {
+    "description": "Wrap flex 2 columns"
+  },
+  "Draw Arrow": {
     "prefix": "arrw",
-    "body": [
-		"<ArrowDraw color=\"red\" v-drag />"
-	],
-    "description": "Draw Arrow",
-	"Draw Thumb": {
-    "prefix": "arrw",
-    "body": [
-		"<Thumb color=\"green-light\" width=\"300px\" v-drag />"
-	],
+    "body": ["<ArrowDraw color=\"red\" v-drag />"],
+    "description": "Draw Arrow"
+  },
+  "Draw Thumb": {
+    "prefix": "thumb",
+    "body": ["<Thumb color=\"green-light\" width=\"300px\" v-drag />"],
     "description": "Draw Thumb"
-
+  }
 }
