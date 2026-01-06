@@ -1328,6 +1328,8 @@ for (count1 = 0, count2 = 1.0;
 
 [What's the result?]{class="text-2xl"}
 
+https://onlinegdb.com/JoWshmoO25
+
 ```cpp
 #include <iostream>
 
@@ -1368,6 +1370,8 @@ for loop_variable in object:
 
 ::left::
 
+https://onlinegdb.com/zC57SOV-Yu
+
 **Case 1**
 ```python
 for x in range(2):
@@ -1380,7 +1384,12 @@ print("end loop")
 ```
 
 ::right::
+
+https://onlinegdb.com/wfMFOAHyM
+
 **Case 2**
+
+
 ```python
 for x in range(6):
   if x == 3: 
@@ -1400,6 +1409,9 @@ layout: two-cols-title
 ::left::
 
 **Case 1**
+
+https://onlinegdb.com/z7PfuIhGm
+
 ```swift
 for i in 1...3  {
     print(i)
@@ -1407,6 +1419,9 @@ for i in 1...3  {
 ```
 
 **Case 2**
+
+https://onlinegdb.com/sgUfAn5fz
+
 ```swift
 print("Players gonna ") 
  for _ in 1...5 { 
@@ -1417,6 +1432,9 @@ print("Players gonna ")
 ::right::
 
 **Case 3**
+
+https://onlinegdb.com/HOBd2cP-s
+
 ```swift
 for i in 1...5  where i == 2 || i == 3 {
     print(i)
