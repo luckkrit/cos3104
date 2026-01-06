@@ -1687,7 +1687,7 @@ int main(){
 
 ::right::
 
-https://onlinegdb.com/ntPFafBC_
+https://onlinegdb.com/0an0-02uN
 
 ```c
 #include <stdio.h>
@@ -1705,12 +1705,13 @@ int main() {
 	}
 	#else
 	printf("While-Loop:\n");
-	for(int k=0; k<SIZE*SIZE; k++) {
+  int i=0,j=0,k=0;
+  while(k++<SIZE*SIZE-1){
 		int i = k / SIZE;  // Row
 		int j = k % SIZE;  // Column
 		rulers[i][j] = j;
 		printf("rulers[%d][%d] = %d\n", i, j, rulers[i][j]);
-	}
+  }
 	#endif
 	return 0;
 }
@@ -1753,7 +1754,7 @@ for(i=0;true;i++){
 
 ::right::
 
-```js
+```js 
 i=0;
 while(true){
   console.log(i);
@@ -1768,6 +1769,8 @@ while(true){
 
 
 [C++: break]{class="text-2xl"}
+
+https://onlinegdb.com/6nvDIRxuS
 
 ```cpp
 #include <iostream>
@@ -1797,6 +1800,8 @@ int main() {
 
 [Java: break]{class="text-2xl"}
 
+https://onlinegdb.com/5SIzkm7jK
+
 ```java
 public class Main
 {
@@ -1817,6 +1822,8 @@ public class Main
 
 [Swift: Break label]{class="text-2xl"}
 
+https://onlinegdb.com/yMrSFEZGz
+
 ```swift
 outerloop: for i in 1...5{
 
@@ -1836,6 +1843,8 @@ print("end ")
 ---
 
 [Java: Break label]{class="text-2xl"}
+
+https://onlinegdb.com/D4rXakL5qk
 
 ```java
 public class Main
@@ -1869,7 +1878,10 @@ layout: two-cols-title
 ::title::
 [Python: break]{class="text-2xl"}
 
+
 ::left::
+
+https://onlinegdb.com/PMfYgqTWc
 
 ```python
 for x in range(2):
@@ -1882,6 +1894,8 @@ print("end loop")
 ```
 
 ::right::
+
+https://onlinegdb.com/sX3PQFvnp
 
 ```python
 for x in range(6):
@@ -1924,6 +1938,8 @@ while(i<10){
 
 [continue in C/C++,C#]{class="text-2xl"}
 
+https://onlinegdb.com/bAsRxIyel
+
 ```cpp
 #include <iostream>
 using namespace std;
@@ -1964,6 +1980,9 @@ layout: two-cols-title
 [PHP vs. Java]{class="text-2xl"}
 
 ::left::
+
+https://onlinegdb.com/oXvR8AJ44
+
 ```php
 <?php
 $list = array("apple", "banana", "cherry", "date");
@@ -1976,6 +1995,8 @@ while($current_value = next($list))
 ```
 
 ::right::
+
+https://onlinegdb.com/RgAJcgumb
 
 ```java
 import java.util.ArrayList;
@@ -1995,9 +2016,11 @@ public class Main {
 
 [Python]{class="text-2xl"}
 
+https://onlinegdb.com/z8i3oioea
+
 ```python
 fruits = ["apple", "cake", "banana", "cherry"]
-count = 0;
+count = 0
 for x in fruits:
   if x == "cake":
     continue
@@ -2005,11 +2028,13 @@ for x in fruits:
   count+=1
   if x == "banana":
     break
-print (count);
+print (count)
 ```
 ---
 
 [C#]{class="text-2xl"}
+
+https://onlinegdb.com/szIaycFtv
 
 ```csharp
 using System;
@@ -2035,6 +2060,8 @@ class HelloWorld {
 
 [Swift]{class="text-2xl"}
 
+https://onlinegdb.com/_02pLJuET
+
 ```swift
 let languages = ["Swift", "Java", "Go", "JavaScript"]
 
@@ -2049,6 +2076,8 @@ for language in languages where language != "Java"{
 
 **Case 1**
 
+https://onlinegdb.com/RdGA8sagF
+
 ```js
 tokens = ["one","two","three"]
 
@@ -2059,12 +2088,15 @@ for(let token of tokens){
 
 **Case 2**
 
+https://onlinegdb.com/c2VRZoP8C
+
 ```js
 const person = {fname:"John", lname:"Doe", age:25};
 let text = "";
 for (let x in person) {
   text += person[x] + " ";
 }
+console.log(text)
 ```
 
 
