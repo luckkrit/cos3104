@@ -1,0 +1,387 @@
+---
+title: "Scheme Tutorial"
+subtitle: "COS3104"
+author: "Krit Chomaitong"
+editor:
+  render-on-save: true
+format: 
+  pptx:
+    incremental: true            # Bullet points appear one by one
+---
+
+
+## ประวัติ
+
+- สร้างโดย Gerald Sussman และ Guy Steele ปี ค.ศ. 1975 ที่ MIT
+- พัฒนาจาก LISP ให้เรียบง่ายและสอดคล้องกับแคลคูลัสแลมบ์ดามากขึ้น
+
+---
+
+## โปรแกรมและนิพจน์
+
+:::: {.columns}
+
+::: {.column}
+- ตัวโปรแกรมจะประกอบไปด้วยนิพจน์ซึ่งเขียนอยู่ในวงเล็บ ด้วยรูปแบบ prefix
+:::
+
+::: {.notes}
+```scheme
+{{< include ../code/ex4.scm >}}
+```
+:::
+
+::: {.column}
+![<https://www.jdoodle.com/ga/Cj3wht7rJBU1ck7nLZcHRg%3D%3D>](../images/scheme-tutorial/scheme-tutorial_2026-03-03-10-38-43.png)
+:::
+
+::::
+
+---
+
+## นิพจน์
+
+:::: {.columns}
+:::{.column}
+- สัญลักษณ์ตัวแรกที่ปรากฎภายในนิพจน์ เช่น `+, -, *, max` จะเป็น operator หรือ function
+- สัญลักษณ์ที่ตามมาจะปรากฎเป็น operand
+- ข้อดีของการใช้ prefix operator คือจะสามารถเขียนกับ operand จำนวนหลายๆตัวได้
+- ใช้สัญลักษณ์ `;` แทนการ comment
+
+:::
+:::{.column}
+![<https://try.scheme.org/>](../images/scheme-tutorial/scheme-tutorial_2026-03-03-10-41-42.png)
+:::
+::::
+
+::: {.notes}
+```scheme
+{{< include ../code/ex5.scm >}}
+```
+:::
+
+---
+
+## นิพจน์ในภาษา Scheme
+
+1. นิพจน์คณิตศาสตร์ (Arithmetic Expression)
+2. นิพจน์ตรรกะ (Boolean Expression)
+3. นิพจน์แบบมีเงื่อนไข (Conditional Expression)
+4. นิพจน์แลมป์ดา (Lambda Expression)
+
+---
+
+## 1. นิพจน์คณิตศาสตร์ (Arithmetic Expression)
+
+::::{.columns}
+:::{.column}
+- เป็นนิพจน์ที่ให้ค่าเป็นจำนวนเลข
+:::
+
+:::{.notes}
+```scheme
+{{< include ../code/ex8.scm >}}
+```
+:::
+
+:::{.column}
+![<https://try.scheme.org/>](../images/scheme-tutorial/scheme-tutorial_2026-03-03-12-08-08.png)
+
+:::
+::::
+---
+
+## 2. นิพจน์ตรรกะ (Boolean Expression)
+
+::::{.columns}
+:::{.column}
+- ให้ค่า **True** แทนด้วย `#t`
+- ให้ค่า **False** แทนด้วย `#f`
+:::
+
+
+:::{.notes}
+```scheme
+{{< include ../code/ex9.scm >}}
+```
+:::
+
+:::{.column}
+![<https://try.scheme.org/>](../images/scheme-tutorial/scheme-tutorial_2026-03-03-12-16-04.png)
+:::
+::::
+---
+
+
+## 3. นิพจน์แบบมีเงื่อนไข (Conditional Expression)
+
+1. ใช้ `if`
+
+```scheme
+(if <test> <true-expression> <false-expression>)
+```
+
+2. ใช้ `cond`
+
+```scheme
+(cond
+  (<test-expr1> <exprssion1>)
+  (<test-expr2> <exprssion3>)
+  ...
+  (else <else-expr>)
+)
+```
+  
+---
+
+## 1. ใช้ `if`
+
+::::{.columns}
+
+:::{.column}
+```scheme
+(if <test> <true-expression> <false-expression>)
+```
+:::
+
+:::{.column}
+![<https://try.scheme.org/>](../images/scheme-tutorial/scheme-tutorial_2026-03-03-12-28-11.png)
+:::
+
+:::{.notes}
+```scheme
+{{< include ../code/ex10.scm >}}
+```
+:::
+
+
+::::
+
+---
+
+## 2. ใช้ `cond`
+::::{.columns}
+:::{.column}
+```scheme
+(cond
+  (<test-expr1> <exprssion1>)
+  (<test-expr2> <exprssion3>)
+  ...
+  (else <else-expr>)
+)
+```
+:::
+:::{.column}
+![<https://try.scheme.org/>](../images/scheme-tutorial/scheme-tutorial_2026-03-03-12-50-14.png)
+:::
+:::{.notes}
+```scheme
+{{< include ../code/ex11.scm >}}
+```
+:::
+::::
+
+---
+
+
+## 4. นิพจน์แลมป์ดา (Lambda Expression)
+::::{.columns}
+:::{.column}
+- เป็นนิพจน์ที่ยามฟังก์ชัน
+:::
+:::{.column}
+![<https://try.scheme.org/>](../images/scheme-tutorial/scheme-tutorial_2026-03-03-13-07-28.png)
+:::
+:::{.notes}
+```scheme
+{{< include ../code/ex12.scm >}}
+```
+:::
+::::
+
+---
+
+## ตัวอย่างฟังก์ชันบวกในแคลคูลัสแลมป์ดา
+
+![(λx.λy. x + y)](../images/scheme-tutorial/scheme-tutorial_2026-03-03-10-15-24.png)
+
+
+::: {.notes}
+
+```scheme
+{{< include ../code/ex1.scm >}}
+```
+
+:::
+
+---
+
+## ตัวอย่างการเรียกใช้ฟังก์ชัน
+
+:::: {.columns}
+
+::: {.column width="40%" }
+
+- ส่งค่า 2 และ 3 เป็นพารามิเตอร์
+
+:::
+
+::: {.column width="60%"}
+
+![<https://www.jdoodle.com/ia/1QJ4>](../images/scheme-tutorial/scheme-tutorial_2026-03-03-10-18-01.png)
+
+:::
+::::
+
+---
+
+## ตัวอย่างการตั้งชื่อโดยใช้ฟังก์ชั่น DEFINE แบบเต็ม
+
+:::{.notes}
+```scheme
+{{< include ../code/ex13.scm >}}
+```
+:::
+
+![<https://try.scheme.org/>](../images/scheme-tutorial/scheme-tutorial_2026-03-03-13-18-11.png)
+
+---
+
+## ตัวอย่างการตั้งชื่อโดยใช้ฟังก์ชั่น DEFINE แบบย่อ
+
+:::{.notes}
+```scheme
+{{< include ../code/ex3.scm >}}
+```
+:::
+
+![<https://www.jdoodle.com/ia/1QJa>](../images/scheme-tutorial/scheme-tutorial_2026-03-03-10-54-21.png)
+
+---
+
+## ตัวอย่างการตั้งชื่อโดยใช้ฟังก์ชั่น DEFINE
+
+:::{.notes}
+```scheme
+{{< include ../code/ex7.scm >}}
+```
+:::
+
+![<https://try.scheme.org/>](../images/scheme-tutorial/scheme-tutorial_2026-03-03-11-23-56.png)
+
+
+---
+
+## ตัวอย่างการใช้ฟังก์ชันพิมพ์ออกทางหน้าจอ 
+
+
+![<https://www.jdoodle.com/ga/1vGTMXqtFJiPNmF2DT%2BNSA%3D%3D>](../images/scheme-tutorial/scheme-tutorial_2026-03-03-10-23-03.png)
+
+
+---
+
+## โปรแกรมและข้อมูลในภาษา Scheme
+::::{.columns}
+:::{.column}
+- โปรแกรมใช้โครงสร้างของ List แบบเดียว
+:::
+:::{.column}
+![<https://try.scheme.org/>](../images/scheme-tutorial/scheme-tutorial_2026-03-03-13-46-37.png)
+:::
+:::{.notes}
+```scheme
+{{< include ../code/ex14.scm >}}
+```
+:::
+::::
+
+---
+
+## Built-in Types (Primitive Types) or Atoms
+::::{.columns}
+:::{.column}
+| Type       | Predicate    | Example               |
+| ---------- | ------------ | --------------------- |
+| Number     | (number? x)  | (number? 42) → #t     |
+| Character  | (char? x)    | (char? #\\a) → #t     |
+| String     | (string? x)  | (string? "hi") → #t   |
+| Symbol     | (symbol? x)  | (symbol? 'apple) → #t |
+| Boolean    | (boolean? x) | (boolean? #f) → #t    |
+| Empty List | (null? x)    | (null? '()) → #t      |
+
+
+:::
+:::{.column}
+- Because Scheme is dynamically typed, you often have to write "guard" clauses in your functions to prevent errors.
+:::
+:::{.notes}
+```scheme
+{{< include ../code/ex16.scm >}}
+```
+:::
+::::
+
+---
+
+## Built-in Types
+
+![<https://try.scheme.org/>](../images/scheme-tutorial/scheme-tutorial_2026-03-03-14-37-23.png)
+
+---
+
+## Built-in Functions
+::::{.columns}
+:::{.column}
+
+- max, min
+- +, *, -, /
+- quotient, modulo, remainder
+- ceiling, floor, abs, magnitude, round, truncate
+- gcd, lcm
+- exp, log, sqrt
+- sin, cos, tan
+:::
+:::{.column}
+- <, >, =, <=, >=
+- real?, number?, complex?, rational?, integer?
+- zero?, positive?, negative?, odd?, even?, exact?
+- and, or, not
+- equal?, boolean?
+- char?, char=?, char<=?, char>=?
+:::
+:::{.notes}
+:::
+::::
+
+---
+
+## ตัวอย่างการใช้งาน
+
+![<https://try.scheme.org/>](../images/scheme-tutorial/scheme-tutorial_2026-03-03-14-45-54.png)
+
+:::{.notes}
+```scheme
+{{< include ../code/ex15.scm >}}
+```
+:::
+
+---
+
+## ชนิดของข้อมูลลิสต์และการประมวลผลลิสต์
+::::{.columns}
+:::{.column}
+- จากรูปแผนภูมิต้นไม้จะสังเกตได้ว่าลิสต์ทุกลิสต์จะมีสัญลักษณ์ลิสต์ว่าง (แทนด้วยเครื่องหมาย ()) ปิดท้ายอยู่เสมอ เพื่อบอกการสิ้นสุด
+- สัญลักษณ์ () ที่ปิดท้ายจะเป็นประโยชชน์ในการทำงานกับลิสต์แบบเวียนบังเกิด (recursive)
+
+:::
+:::{.column}
+
+![(I LIKE PROGRAMMING)](../images/scheme-tutorial/scheme-tutorial_2026-03-04-09-38-22.png)
+:::
+:::{.notes}
+```scheme
+{{< include ../code/ex17.scm >}}
+```
+:::
+::::
+

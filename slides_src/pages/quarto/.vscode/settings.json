@@ -1,0 +1,14 @@
+{
+  "pasteImage.path": "${projectRoot}/images/${currentFileNameWithoutExt}",
+  "pasteImage.basePath": "${projectRoot}/images",
+  "pasteImage.prefix": "/",
+  "pasteImage.namePrefix": "${currentFileNameWithoutExt}_",
+  "pasteImage.defaultName": "Y-MM-DD-HH-mm-ss",
+  "pasteImage.insertPattern": "![${imageFileNameWithoutExt}](../images${imageFilePath})",
+  "pasteImage.showFilePathConfirmInputBox": true,
+  "pasteImage.filePathConfirmInputBoxMode": "onlyName",
+  "markdown.copyFiles.destination": {
+    "*.qmd": "../images/${documentBaseName}/${documentBaseName}.png"
+  },
+  "markdown.copyFiles.overwriteBehavior": "nameIncrementally"
+}
