@@ -780,6 +780,8 @@ Three common strategies:
 **#3 is the most common in practice** — uses more space than #1, but simpler allocation/deallocation; #2 is faster to search but slower to reorganize than #3.
 
 ---
+layout: section
+---
 
 # Array Types
 
